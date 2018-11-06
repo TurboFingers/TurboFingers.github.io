@@ -1,0 +1,129 @@
+================================================================================
+# Linux Terminal commands				    | date: 03_05_2017 # 
+================================================================================
+
+
+
+
+=========================
+# FOLDERS AND FILES  	|
+================================================================================
+cd -	go to the last location		
+pwd	current folder
+ls	list of files and folders
+ls -a	list and atributes
+touch [file name]	make a tekst file
+mv file_name direcorty				- move files
+mv smb.conf smb.conf.$(date +%F)		- add the date to the file name
+cp file file_$(date +%D|sed 's/\//_/g')		- add date at the end (_22_03_2018)
+cp file file_$(date +%F|sed 's/\-/_/g')		- add date at the end (_2018_03_26)
+
+grep -ve ^# -ve '^;' -ve ^$ smb.conf.2018-03-12 > smb.conf
+filter the file smb.conf.2018-03-12 and save output to file smb.conf
+-ve	- reverse expression
+^#	- remove # symbol
+'^;'	- remove ; symbol (needs '' as this is a special character)
+^$	- remove empty lines
+-e	- expresion
+
+
+cp [file name] [destination]	file copy
+rm -rf [directory_name]				- remove directory
+
+find -name "truecr*"				- find file "truecr*"
+find /home/ubuntu/ -iname 'nozbe*' -print 
+bash [program.sh] - instal program
+
+### NTFS partition 
+sudo ntfsfix /dev/sdb2
+
+
+/* uninstall programs */
+sudo apt-get purge google-earth-stable -  ex of google earth
+
+dd if=/sciezka_do_obrazu.iso of=/dev/sdX - wypalanie pliku iso na pendrive
+
+=========================
+# INFO and APP 		|
+================================================================================
+lsb_relase -a 					- ubuntu version
+ifconfig					- network card info
+konqueror					- KDE browser
+sensible-browser				- GNOME browser
+nautilus					- GNOME file manager
+find /home/ubuntu/ -iname 'nozbe*' -print 
+bash [program.sh] 				- instal program	
+sudo apt-get remove app_name			- uninstal program
+sudo apt-get autoclean				- clean after uninstal
+sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
+
+
+=========================
+# NETWORK		|
+================================================================================
+
+ping -c4 [IP ADDRESS]				- send ping four times only
+nmap -sP 192.168.1.1-254 			- search addresses from1 to 254	
+
+arp -a						- to get mac and IP addresses in loccal network
+ping 127.0.0.0					- loop ping (to test network card)
+
+who						- loged users list
+write <user> <pts/**> Enter			- Start a message 
+
+=========================
+# Other			|
+================================================================================
+type vim
+output vim is hashed (/usr/bin/vim)
+
+for ((i=1; $i<=20; i++)); do "echo linia $i"; done
+
+/* terminal title bar */
+PROMPT_COMMAND='echo -ne "\033]0;Terminal | mplayer\007"' - terminal title bar change 
+PROMPT_COMMAND='echo -en "\033]0; $(whoami)@$(hostname)|$( pwd|cut -d "/" -f 4-100 ) \a"'
+TITLEPREFIX='echo -en "\033]0; $(whoami)@$(hostname)|$( pwd|cut -d "/" -f 4-100 ) \a"'
+echo -en "\033]0;New terminal title\a"
+TITLEPREFIX="madayou" - works in GITBash windows
+
+
+
+ ipconfig > /c/_temp/`whoami`.txt - send command output (ipconfig) to file name (machine user name).txt
+# VARIABLES
+basename $0	- current script location and name
+tree . 		- folders and files
+
+=========================
+# User accounts		|
+================================================================================
+
+sudo su						- switch to the root user
+sudo adduser <user_name>			- add user
+passwd	<user_name>				- set a user password
+useradd -d /data/projects <user_name>		- add user wit a specific home folder
+
+userdel <user_name>				- remove user
+userdel -r <user_name>				- remove user, home direcory ane email
+
+groups <user_name>				- show the groups to which user belong
+sudo adduser <user_name> <group_name>		- add user to specific group
+
+
+=========================
+# screen		|
+================================================================================
+screen -S <sesion_name>				- create a new sesion
+screen -ls					- list curent sesion
+CTRL + A & CTRL + D				- safe log out from the screen (terminal)
+CTRL + A : screenname new_screen_name		- rename sesion
+screen -r <id.sesion_name>			- login to sesion
+
+
+=========================
+# crone		|
+================================================================================
+sudo apt-get install gnome-schedule		- install crone 
+crontab - e					- edit crone table
+crontab -l					- view your currently saved scheduled tasks
+select-editor					- change current crone tab editor
+

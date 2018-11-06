@@ -1,0 +1,49 @@
+=============================================================================== 
+=  Linux Shortcuts 					pmadaj@ 2017-02-12    =
+=============================================================================== 
+
+	Shortcuts are very powerful, and very fast to use. 
+	I colected all useful shortcuts, the list is groving up every day
+	 
+
+alias	|windows files locations	|					
+-------------------------------------------------------------------------------
+git	|/c/_winapp/git/scripts		| all script files
+dropbox	|/c/_xdrive/Dropbox/_work/bash	| all script files backup
+	|/c/_xdrive/Dropbox/_edu/	| all manuals
+pit	|/c/Users/pit			| settings files (.bashrc && .viminfo)
+
+
+ 
+=============================================================================== 
+=  T e r m i n a l							      =
+=============================================================================== 
+
+CTRL + a	- move cursor to begining of the line
+CTRL + u	- move coursor to the end of the line
+CTRL + u	- delete text from cursor to begining of the line
+CTRL + k	- delete text from cursor to end of the line
+
+
+CTRL + c	- stop command
+CTRL + \	- stop command and write output to the file 'core' in folder 
+CTRL + s	- stops all output in the terminal
+CTRL + q	- restarted all output in the terminal
+CTRL + l	- same as command clear
+\		- new line 
+where [name]	- ex. where vim - shows you path to vim folder
+source .file	- read and executes commands from file in the current shell enviroment 
+chmod +x file	- set up execute
+ls -alh / | vim -	paste folder list into vim file
+find -name [filename]	- find the file 
+
+
+
+=============================================================================== 
+=  T h u n d e r b i r d                                                      =
+=============================================================================== 
+
+F6		- Move to Next Mail Panel
+Shift + F6	- Move to Previous Mail Panel
+CTRL+ Shift + B	- Open address book
+

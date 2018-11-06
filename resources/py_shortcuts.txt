@@ -1,0 +1,19 @@
+================================================================================
+# PyCharm Edu - shortcuts				    | date: 27_07_2017 # 
+================================================================================
+
+ctrl + x 			- delete line
+ctrl + c			- select all line
+ctrl + w 			- select word
+ctrl + w (second time and so on)- extend selection
+ctrl + /			- comment a line
+
+
+ctrl + k			- commit
+ctrl + shift + k		- push
+
+ctrl + shift + F10		- run
+shift + F6			- change all names 
+alt + ->			- move to next open file
+alt + 4				- go to 'Run' Window
+F8				- next step (Debugger mode)

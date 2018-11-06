@@ -1,0 +1,138 @@
+================================================================================
+# Raspberry Pi - comands to set up			    | date: 21_02_2018 # 
+================================================================================
+
+
+=========================
+# HIGHT and LOW		|
+================================================================================
+
+HIGH and LOW are voltage states.
+The current that flows through the load depends on what the other end of
+the load is connected to.
+
+If the load is between GPIO and ground, then no current flows when the output
+is LOW and some current flows when the output is HIGH.
+
+If the load is between GPIO and 3.3 volts, then no current flows when the output
+is HIGH and some current flows when the output is LOW. 
+
+All things being equal the current that does flow is the same in both situations.
+
+Most relay boards are wired such that the other end of the load which 
+the RPi sees is not connected to ground.
+
+=========================
+# SAMBA			|
+================================================================================
+
+/etc/samba/smb.conf					- config file
+testparm						- test samba configs
+
+smbpasswd -a pi						- set user 'pi'
+sudo systemctl enable smbd.service			- set samba as native service
+
+service samba restart					- restart 
+service samba status					- status
+
+cat /var/log/samba/log.%m				- logs
+
+
+
+
+
+
+
+=========================
+# VNC server		|
+================================================================================
+
+sudo apt-get install tightvncserver			- install vnc serwer
+tinghtvncserver (alias VNC_start)			- start VNC
+
+sudo netstat -apn | grep tcp | grep LISTEN		- 
+
+
+/home/pi/.vnc/xstartup					- edit this file and add below line to change cursor
+xsetroot -solid grey -cursor_name left_ptr		
+
+
+
+=========================
+# GPIO			|
+================================================================================
+pinout							- Hardware  details
+sudo raspi-config					- Raspbery BIOS
+/var/log/auth.log					- ssh logs
+
+gpio readall						- list of all pins in terminal
+sudo i2cdetect -y 1					- i2c buss addresses
+lsmod | grep i2c_					- ? lsmod 
+=========================
+# CPU test & script      |
+================================================================================
+
+sudo apt-get clean					- clean
+sudo apt-get update					- update
+sudo apt-get install sysbench				- install
+#!bin/bash
+vcgencmd masure_temp
+sysbench --test=cpu --cpu-max-prime=10000 --num-threads=4 run >/dev/null 2>&1
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq - CPU frequncy
+
+=========================
+# WebIOPi		|
+================================================================================
+WebIOPi-0.7.1 Patch for Raspberry B+, Pi2, and Pi3
+
+You have full access to all header pins (40 pins) on the Web interface.
+Usage
+
+$ wget http://sourceforge.net/projects/webiopi/files/WebIOPi-0.7.1.tar.gz
+$ tar xvzf WebIOPi-0.7.1.tar.gz
+$ cd WebIOPi-0.7.1
+$ wget https://raw.githubusercontent.com/doublebind/raspi/master/webiopi-pi2bplus.patch
+$ patch -p1 -i webiopi-pi2bplus.patch
+$ sudo ./setup.sh
+How to Start WebIOPi
+
+    Follow the steps below if Raspbian is installed by NOOBS later than 1.4.2.
+
+$ cd /etc/systemd/system/
+$ sudo wget https://raw.githubusercontent.com/doublebind/raspi/master/webiopi.service
+$ sudo systemctl start webiopi
+$ sudo systemctl enable webiopi
+
+
+Sorry, you are running this installer on an unsupported platform. But if you go to
+http://forum.weaved.com we'll be happy to help you get your platform up and running.
+
+Thanks!
+
+WebIOPi successfully installed
+* To start WebIOPi foreground   : sudo webiopi [-h] [-c config] [-l log] [-s script] [-d] [port]
+
+sudo /etc/init.d/webiopi start				-  To start WebIOPi background
+sudo update-rc.d webiopi defaults			-  To start WebIOPi at boot 
+
+* Weaved IoT Kit installed, log on http://developer.weaved.com to access your device
+
+* Look in /home/pi/WebIOPi-0.7.1/examples for Python library usage examples
+
+=========================
+# Apache		|
+================================================================================
+
+sudo apt-get install apache2 -y				- install apache on raspberry
+/etc/apache2/apache2.conf				- config file
+sudo service apache2 restart				- restart apache
+/var/www/html/resources					- www folder
+
+
+=========================
+# memory		|
+================================================================================
+def -h /						- show RAM usage
+sudo fdisk -l						- 
+cat /proc/meminfo					- memory details
+

@@ -1,0 +1,76 @@
+================================================================================
+# Windows terminal commands				    | date: 03_05_2017 # 
+================================================================================
+
+
+### history
+F7 							- history an new layer
+doskey /history 			- history in the command prompt
+navigation button UP/Down
+
+### 
+tasklist /v					- taks list with window name
+
+
+=========================
+# NETWORK		|
+================================================================================
+	
+getmac			- mac addresses of all wirless devices
+nslookup google.com	- check IP address of any webside
+arp -a			- IP addresses
+ipconfig		- get IP addresses
+netstat			
+ping 127.0.0.1		- loop ping
+
+for /L %i in (1,1,254) do ping 192.168.1.%i -n 2 > c:\pingowanie.txt
+			- ping Ips in local network
+
+
+
+=========================
+# Windows variables	|
+================================================================================
+%TEMP%			- temoproary folder
+taskmgr			- Task Manager
+%appdata%		- all programs setings folder
+
+
+
+
+	
+| clip - redirect output to clip
+> abc.txt - redirect output to file
+
+&& - execute multiple commands
+
+
+
+driverquery - drivers list
+
+title /madayou/ - customize the Command Prompt Title Bar
+
+
+=========================
+# Folders & variables	|
+================================================================================
+
+## Start up folder
+The All Users Startup Folder is located at the following path:
+#+r - shell:common startup
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
+The Current User Startup Folder is located here:
+#+r - shell:startup
+C:\Users\[Username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+
+=========================
+# Symbolic links	|
+================================================================================
+
+mklink /D [name] [path]
+cd c:\
+mklink /D skrzynka c:\_x_drive\Dropbox\skrzynka
+
+will create symbolink link in C drive to c:\_x_drive\Dropbox\skrzynka
+	

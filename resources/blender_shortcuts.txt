@@ -1,0 +1,37 @@
+================================================================================
+# Shortcuts Blender					    | date: 02_01_2018 # 
+================================================================================
+
+.		- focus on object an zoom
+a		- zaznaczanie i odznaczanie
+spacja		- menu wyszukiwnia
+shift + A	- dodawanie obiektow
+shift + klik	- zaznaczanie elementow
+g		- przesuwanie obiektu
+g + x
+g + y
+g + z 
+g + z and .005 - przesun o 5 mm w osi Z
+tabulator	- edycja scianek
+e 		- wyciaganie zaznaczonego fragmentu w plaszczznie
+e + x
+e + z
+e + y
+b i myszka	- zaznaczanie obiektow boxem
+ctrl + prawy myszy 	- lasso
+klawiatura numeryczna	- widoki
+tinyCAD - doinstalowac do mierzenia
+1,3,7	- widoki x, y, z
+
+shift + d	- kopiowanie obiektu na nowy niezlazny obiekt
+alt + d 	- kopia obiektu (zalezna od pierwszego obiektu)
+
+shift + s	- przesuniecie obiektu wzgledem kursora do osi, next to cursor from menu
+ikona warstw 	- z shiftem wszystkie pokazuje
+bez shift 	- tylko klikana warstwa
+ctrl + r	- pociecie siatki na rowne czesci (scrool myszki dodaje wartosci)
+ctrl + tab	- vertex, Edges, Faces
+
+ 
+
+

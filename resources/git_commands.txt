@@ -1,0 +1,151 @@
+================================================================================
+# BASIC Git commands					    | date: 02_06_2017 # 
+================================================================================
+Git is a version control system
+
+working_enviroment -> staging_neviroment -> commit -> push
+
+branches :
+MASTER	-		- main project branch
+	- V_01		- second branch to test a new futures
+	- V_02		- third branch to test a new futures
+
+
+https://github.com/github/gitignore 	- example .gitignore files
+
+=========================
+# General commands	|
+================================================================================
+which git				- folder where git is install
+git config -- list			- list of al setings
+cd~ -> cat .gitconfig			- user name and email
+
+git config --global user.name pmadaj
+git config --global user.email email@co.uk	
+git config --global core.excludesfile .gitignore_global
+cat .git/config					- settings to remote 'origin' 
+git config user.email			- check which email is set up
+git --version					- git version
+git init						- new repository in current folder
+git add readme.txt				- add readme file
+
+
+git log					- commits list
+git log --oneline --decorate --all	- short commit list
+git log --oneline --graph --all		- show graph history branch
+git log --grep 'text'			- show all commits witch specific text
+
+git show <#>					- show changes in specific #
+
+git ls-tree HEAD				- list of all commits
+git ls -tree master
+
+gitk		- GUI
+.gitignore					- file to ignore files in repository			
+.gitignore_global			- file to ignore the all filles 
+.gitkeep					- file to track empty directory
+
+
+
+=========================
+# Working Directory	|
+================================================================================
+
+
+git diff				- show all the changes in the file/files in working directory
+git diff <file>				- show all the changes in the <file> in working directory
+	--a/file_a			- the old version
+	++a/file_a			- the new verion
+	@@ -1 +1,3 @@			- line numbers that were changed
+
+git diff --staged			- show all the changes in the file/files in staged directory
+git diff --color-words 			- color changed words in long lines
+git mv <orginal_name> <new_name>	- change file name
+git commit -am 'your coment'		- add to staging and commit in one go
+
+=========================
+# Staging Directory	|
+================================================================================
+git add .					- add all files to waiting queue
+git add <file>				- add specific file to waiting queue
+git add --all				- add all changes to waiting queue (a new, deleted and changed files)
+git checkout <file>			- loading previous commited version of the file
+					  and removing this file from staging (clean)
+
+							- when file was deleted, you can un-delete the file
+git checkout <#>			- load specific commit (you can copy only part of the #)
+git reset HEAD <file>			- overwrite file to current changes made in 
+					 the file since last staged
+git diff --staged			- show all the changes in the file/files in staged directory
+git rm	<file>				- remove file from staging directory			
+git rm -f <file>			- remove file from staging directory (force)
+
+git reset HEAD <file>			- unstage file
+
+			 =========================
+			 | Branches 	         |
+================================================================================
+
+git branch					- shows all branches (the * identify current branch)
+git branch -r				- shows all remote branches
+git branch -a				- shows all branches (even not downloaded)
+git checkout -b <branch name>		- create a new branche and checkout it
+git checkout <branch name>	- switch between branches	
+git checkout master			- back to master branch 
+git branch -d hotfix		- delete branch	
+
+git branch <branch_name> #		- create a branch <branch_name> from commit #
+git merage <branch_name>		- merage <branch_name> to current branch
+git branch -m <branch_name> <new_name>	- change branch name
+git branch -D <branch_name>		- delete branch 
+
+=========================
+# Commit 		|
+================================================================================
+
+git commit -a				- add commit (-a - for all staged files)
+git commit -m 'your comment'		- add commit with a coment 
+git commit --amend -m 'a new commment'	- change commited comment, only most recent changes
+
+=========================
+# Push			|
+================================================================================
+git remote add origin git@git.com.my_repo_name.git
+git push -u orgin master		- send the files to Git
+	
+
+
+
+
+
+=========================
+# Send files to Git	|
+================================================================================
+	
+
+git clone [url]				- copy all repository to local computer
+git clone [url][folder_name]		- create a new folder and copy all repository to this folder 
+git remote -v				- url-s to repositories
+git show				- shows inf about a git object
+git pull				- copy files from repository to local computer
+
+git rm -r <file/folder>			- remove file/folder from git repository
+
+=========================.
+= aliases				 =.
+=================================================================================.
+git config --global alias.logg "log --graph --decorate --oneline --abbrev-commit --all"
+
+	
+	
+Staging (produkcja lokalnie na komputerze)
++ dodawanie pliku/plikow do kolejki w poczekalni
+Commit (oznaczanie i przesylanie do zdalnego repo)
+Fetch - sprawdzenie zdalnego repo (czy ktos zrobil update w reposytorium na ktorym rozpoczynam prace)
+
+
+
+
+
+
+

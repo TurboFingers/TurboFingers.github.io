@@ -1,0 +1,69 @@
+================================================================================
+# AutoHotKey - sortcuts					    | date: 15_04_2017 # 
+================================================================================
+
+AutoHotkey is a free, open-source custom scripting language for Microsoft
+Windows, initially aimed at providing easy keyboard shortcuts or hotkeys, fast
+macro-creation and software automation that allows users of most levels of computer
+skill to automate repetitive tasks in any Windows application.
+Home page https://autohotkey.com/
+
+=========================
+# emails				|
+================================================================================
+m@		- madayou@wp.pl
+q@		- squadim@gmail.com
+pm@		- pmadaj@amazon.com
+pmb@		- pmbank@protonmail.com
+
+=========================
+# headers & characters		|
+================================================================================
+dmy 		- current date in format dd_mm_yyyy
+ymd		- current date in format yyyy_mm_dd
+
+dollar*		- dollar symbol
+pound*		- pund symbol
+euro*		- euro symbol
+ 
+Caps Lock + 1 	- [w] waiting
+Caps Lock + 2 	- [~] in progress
+Caps Lock + 3 	- [v] done
+Caps Lock + 4 	- [x] rejected
+Caps Lock + 5 	- 
+Caps Lock + 6 	-
+Caps Lock + 7 	-
+Caps Lock + 8 	-
+Caps Lock + 9 	- chapter
+Caps Lock + 0 	- header
+
+Caps Lock + i 	- UP
+Caps Lock + k 	- DOWN
+Caps Lock + k 	- LEFT
+Caps Lock + l 	- RIGHT
+Caps Lock + d 	- DELETE
+
+ahkclip 	- clippoard
+
+ 
+=========================
+# CONSOLE				|
+================================================================================
+
+ALT + 1 	- DCODIAG EC2
+ALT + 2		- DCODIAG PROD
+ALT + 3		- DCODIAG recovery
+ALT + 4		- consoletool		
+ALT + 5		- firmware EC2 (first part)
+ALT + 6		- firmware PROD (first part)
+ALT + 7		- DB auto update
+ALT + 8		- empty 
+ALT + 9		- empty
+ALT + 0		- empty
+
+moboinfo	- mobo details
+moboinfo2	- mobo details2
+tuppass		- DB auto update pass
+
+
+

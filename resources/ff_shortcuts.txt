@@ -1,0 +1,13 @@
+.==============================================================================.
+.= Firefox shortcuts   				      pmadaj@| date: 15_07_2017  
+.==============================================================================.
+
+ebs + asset - check ebs status
+
+ctrl + 1 		- first tab
+ctrl + 9 		- last tab
+ctrl + 2,3,4,5,6,7,8	- next tabs
+
+ctrl + shift + pageUp	- move tab up
+ctrl + shift + pageDown	- move tab down
+

@@ -1,0 +1,45 @@
+================================================================================
+# Nozbe Markdown					    | date: 12_01_2018 # 
+================================================================================
+
+[+]	Formatowanie tekstu
+=============================
+ *kursywa*, **pogrubienie** , ***pogrubienie i kursywa***
+
+
+[+]	Lista punktowa (uzyj gwiazdki i spacji, jak ponizej:)
+=============================	
+* pierwsza rzecz do zrobienia
+* druga rzecz do zapamietania
+* trzecia rzecz, ktora musi zostac wykonana
+
+Mozesz tez wpisac trzy gwiazdki *** w nowym wierszu, aby utworzyc linie pozioma. Uzyj jej, jesli chcesz oddzielic od siebie akapity w jednym komentarzu.
+
+
+[+]	Lista numerowa
+=============================
+W Markdownie mozesz rowniez dodac liste punktowana wewnatrz listy numerowanej.
+W tym celu, wpisz w oknie komentarza cos podobnego jak ponizej:
+
+1. krok A
+2. krok B
+3. krok C C
+  - aaa
+  - bbb
+  - ccc
+4. krok D
+
+Nie zapomnij dodac spacji przed '-'.
+
+[+] kolorowanie skladni
+
+tab # tekst w pomaranczowej ramce
+
+
+[+]	Naglowki komentarzy
+=============================	 
+# Pierwszy naglowek
+## Drugi naglowek
+### Trzeci naglowek
+#### Czwarty naglowek
+	

@@ -1,0 +1,90 @@
+================================================================================
+# VIM - shortcuts					    | date: 22_03_2017 # 
+================================================================================
+SHIFT + 3 		- higlight maches from current cursor position
+
+
+PATH			- /c/_winapp/git/usr/share/vim/vim80/
+
+:			- ex commands mode
+:ls			- list of open files in vim
+:set number		- show rows numbers
+:coloscheme [TAB]	- select colorscheme
+:register		- show registers (clipboard
+:h			- main help file
+)
+*			- find the fraze under coursor then 'n' to next 
+/			- search fraze to the bottom
+?			- search fraze to the top
+n			- search the same fraze
+N			- search the same fraze in oosite direction
+:r file			- paste source from file
+CTRL + G		- show file locationg
+CTRL + N		- show maches 
+CTRL + P		- show maches
+CTRL + x CTRL + f	- mach file names
+
+
+m[a-Z;A-Z]		- set a mark a,b,c ...
+'[a-z;A-Z]		- jump to the line containing a mark with a,b.c ...
+`[a-z;A-Z]		- jump to the exact cursor position of a mark a,b.c ...
+
+
+:r! echo %		- (read command) paste curent file name
+
+
+vimulator	- tutorial how to use Vim
+u		- undo last action
+p		- paste data from clipbord (vim has few different clipbords)
+w		- word, move cursor to next word
+
+gg or 1G	- go to the first line of the file
+G		- go to the end of the file
+nG		- go to the 'n' line
+-		- go to the begining of privious line
++		- go to the begining of next line
+
+
+
+dd		- delete current line
+dw		- delete word
+d2w		- delete two words
+d0		- delete data from begining of the line to cursor
+d$ or D		- delete data from cursor to the end of the line
+
+yy		- copy current line to clipboard (bufor)
+y0		- copy data form begining of the line to cursor
+:%s/A/B/g	- replace all 'A' to 'B' in all lines 
+:%s/A/B/gc	- find A and replace for B with confirmation
+=========================
+# Split Window		|
+================================================================================
+:sp file	- split horizontal current window and open new file
+:vsp file	- split vertical current window and open the new file
+
+CTRL + ww		- go to next window
+CTRL + wp 		- go to previous window
+CTRL + wc 		- close window
+:clo			--'	
+CTRL + wo 		- close all windows, leaving only the current window open
+CTRL + wr		- swap windows (rotation)
+
+CTRL + w + Up		- go to window above
+CTRL + w + Down		- go to window below
+CTRL + w + Left		- go to window on left
+CTRL + w + Right	- go to window on right
+
+CTRL + wn 		- new horizontal split (editing a new empty buffer)
+CTRL + ws 		- split window horizontally (editing current buffer)
+CTRL + wv		- vsplit window vertically (editing current buffer)
+CTRL + wc 		- close window
+CTRL + wo 		- close all windows, leaving only the current window open
+
+
+=========================
+# TABS			|
+================================================================================
+:tabn 		- next tab
+:tabp 		- previous tab
+:tabc 		- close current tab
+:tabo 		- close all other tabs leaving ONLY the current tab open

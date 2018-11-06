@@ -1,0 +1,366 @@
+/*================================================================================
+# style.css					    							| date: 28_04_2017 # 
+================================================================================
+copyright pmadaj@ - some text to explain why, what irp
+=========================
+# FONTs					|
+================================================================================
+*/
+
+@font-face {
+    font-family: 'digital-7';
+    src: url('digital-7.ttf');
+    src: local('digital-7'),
+    	 url('digital-7.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+	}
+
+
+/*===========================
+# navigation manus			|
+================================================================================
+*/
+
+/* MENU NAV TOP */
+ *{margin: 0; padding: 0;}
+#top_menu_nav li {list-style: none;}
+#top_menu_nav {height: 30px; background:#073642; }
+#top_menu_nav ul {visibility: hidden; position: absolute; top: 100%; left: 0;}
+#top_menu_nav li {float: left; padding-right: 1px; position: relative;}
+#top_menu_nav li li {float: none; padding-top: 1px; width: 160px;}
+#top_menu_nav li:hover ul {visibility: visible;}
+#top_menu_nav a, #top_menu_nav li:hover li a {display: block; font: 17px/30px verdana, sans-serif; text-decoration: none; padding: 0 12px; color: #FDF6E3; background-color: #073642;}
+#top_menu_nav li li a {width: 150px;}
+#top_menu_nav li:hover a, #top_menu_nav li:hover li:hover a {background-color: #859900;}
+
+/* MENU NAV RIGHT */
+.right_menu_nav li { /* wyglad elementu wersza listy */
+		list-style: none;
+		margin:0;
+        border:0px;
+        width:150px;
+}
+.right_menu_nav li img { /* pozycionowanie obrazka/ikony w linku */
+		padding-top:3px;
+}
+.right_menu_nav li a { /* wyglad elementu - a */
+		display: block;
+		font: 12px/18px verdana, sans-serif;
+		text-decoration: none;
+		padding: 0 12px;
+		color: #000;
+		background-color: #FDF6E3;
+}  
+.right_menu_nav li:hover a { /* wyglad elementu - a - w momencie najechania na niego kursorem myszki */
+		
+		display: block;
+		font: 12px/18px verdana, sans-serif;
+		text-decoration: none;
+		padding: 0 12px; /*top-bottom left-right */
+		color: #fff;
+		background-color: #abcabc;
+}
+
+// TIME MENU NAV
+ *{margin: 0; padding: 0;}
+#time_menu_nav li {list-style: none;}
+#time_menu_nav {height: 20px; background:#073642; }
+#time_menu_nav ul {visibility: hidden; position: absolute; top:0; left: 0;}
+#time_menu_nav li {float: left; padding-right: 1px; position: relative;}
+#time_menu_nav li li {float: none; padding-top: 1px; width: 160px;}
+#time_menu_nav li:hover ul {visibility: visible;}
+#time_menu_nav a, #time_menu_navli:hover li a {display: block; font: 14px/20px verdana, sans-serif; text-decoration: none; padding: 0 12px; color: #FDF6E3; background-color: #073642;}
+#time_menu_nav li li a {width: 150px;}
+#time_menu_nav li:hover a, #time_menu_navli:hover li:hover a {background-color: #859900;}
+
+// NAV STOPWATCH
+html {
+  background: #333;
+  color: #bbb;
+	
+}
+.controls {
+  position: fixed;
+  text-align: center;
+  top: 1em;
+  width: 100%;
+}
+
+.button {
+  color: #bbb;
+  font-size: 4vw;
+  margin: 0 0.5em;
+  text-decoration: none;
+}
+
+.button:first-child {
+    margin-left: 0;
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+
+.button:hover {
+  color: white;
+}
+
+.stopwatch {
+font-family: 'digital-7';
+  font-size: 20vw;
+  height: 100%;
+  line-height: 100vh;
+  text-align: center;
+}
+
+.results {
+  border-color: lime;
+  list-style: none;
+  font-family: 'digital-7';
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+	
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background: #CCC;
+	color: #000;
+	font-size: 80%;
+	font-family: "arial";
+}
+
+/*=========================
+# top container 		  |
+================================================================================
+*/
+	
+#top_cont
+{
+	width: 100%;
+	height: 60px;
+	color: #CCC;
+}
+
+#top_header
+{
+	margin: 0 auto;
+	width: 100%;
+	height: 30px;
+	background: #FDF6E3;
+	font-weight: bold;
+}
+
+#top_header_left
+{
+	float: left;
+	width: 90%;
+	height: 30px;
+	text-align: left;
+	color: #666;
+}
+
+
+#top_header_right
+{
+	float: left;
+	width: 10%;
+	height: 30px;
+	
+	text-align: right;
+	color: #999;
+}
+
+#top_menu
+{
+	margin: 0 auto;
+	width: 100%;
+	height: 30px;
+	background: #000;
+}
+
+#top_menu_left
+{
+	float: left;
+	width: 80%;
+	height: 30px;
+	background: #fff;
+}
+
+#top_menu_right
+{
+	float: left;
+	width: 20%;
+	height: 30px;
+	background: #333;
+}
+
+#top_menu_right h1
+{
+	margin: 0;
+	padding: 0px 0px 0 0;
+	font-weight: normal;
+	letter-spacing: -2px;
+	color: #FFF;
+	text-align: right;
+}
+
+/*=========================
+# main container    	  |
+================================================================================
+*/
+	
+#main_cont
+{
+	width: 100%;
+}
+
+#main_panel
+{
+	margin: 0 auto;
+	width: 100%;
+	background: #FFF 
+	
+}
+
+#main_panel_left
+{
+	float: left;
+	width: 85%;
+	height: 800px;
+	padding: 15px 0 0 0;
+	
+	font-weight: bold;
+	background: #F1F1F1;
+}
+
+
+#main_panel_right
+{
+	float: left;
+	width: 14%;
+
+	line-height: 160%;
+}
+
+#section_time
+{
+	margin: 0 auto;
+	width: 100%;
+	height:95px;
+}
+
+#section_menu
+{
+	margin: 0 auto;
+	width: 100%;
+	background: yellow;
+	height:300px;
+}
+
+#section_spacer
+{
+	margin: 0 auto;
+	width: 100%;
+	background: black;
+	height:10px;
+}
+
+#time_spacer
+{
+	margin: 0 auto;
+	width: 100%;
+	background: white;
+	height:10px;
+}
+.time_clock
+{
+	margin: 0 auto;
+	width: 100%;
+	height:35px;
+	background: #fff;
+	font-family: 'digital-7';
+	font-size: 50px;
+	text-align: center;
+	letter-spacing: 4px;
+	line-height: 1;
+	
+	padding: 5px 5px 5px 5px;
+	color: #000;
+
+}
+#time_control
+{
+	margin: 0 auto;
+	width: 100%;
+	background: #fff;
+	height:20px;
+}
+#time_menu
+{
+	margin: 0 auto;
+	width: 100%;
+	background: #F1F1F1;
+	height:20px;
+}
+
+/*=========================
+# footer container         |
+================================================================================
+*/
+	
+
+#footerCont
+{
+	width: 100%;
+}
+
+#footer
+{
+	margin: 0 auto;
+	width: 900px;
+	color: #999;
+	font-size: 85%;
+	background: #FFF;
+	border-top: 1px solid #CCC;
+}
+
+#footer a
+{
+	color: #666;
+	text-decoration: none;
+}
+
+#footer a:hover
+{
+	color: #FC0;
+}
+
+#footerleft
+{
+	float: left;
+	width: 425px;
+	padding: 15px 0 15px 25px;
+}
+
+#footerright
+{
+	float: left;
+	width: 425px;
+	padding: 15px 25px 15px 0;
+	text-align: right;
+}

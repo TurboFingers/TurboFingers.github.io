@@ -1,0 +1,84 @@
+
+<html>
+ <head>
+  <title>Fio Output decoder</title>
+
+  <meta charset="utf-8" />
+ </head>
+ <body style="background: #EAEAEA;">
+   <div align="Left" style="font-size:50px;font-family:Calibri">Fio Terse Output Decoder</div>
+  <form action="">
+	   <textarea name="result" id="Fresult" cols="100" rows="18" ></textarea>
+     <br><input type="button" value="submit" onclick="makeTable()">
+     <br>Disk utilization percentage(yellow) : it doesn't mean faulty  but you need to inspect.
+     <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Faulty drives didn't have '100%' value in many cases.
+     <br>Red Cells : Cell in red color means that value is smaller than 150.
+     <br>&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;High rate of faulty.
+          <tr>
+  </form>
+
+
+<table id="ttt" style="border-collapse:collapse; border:2px black solid;"></table>
+<script>
+
+function makeTable() {
+
+   var index = ["Terse Version","Fio Version","Job name","GroupID","Error","Total IO(KiB)","bandwidth (KiB/sec)","IOPS","runtime (msec)","Submission latency:min","max","mean","stdev(usec)","Completion latency: min","max","mean","stdev (usec)","Completion latency percentile","","","","","","","","","","","","","","","","","","","","Total latency: min","max","mean","stdev (usec)","Bw (KiB/s): min","max","aggregate percentage of total","mean","stdev","Total IO(KiB)","bandwidth (KiB/sec)","IOPS","runtime (msec)","Submission latency:min","max","mean","stdev(usec)","Completion latency: min","max","mean","stdev (usec)","Completion latency percentile","","","","","","","","","","","","","","","","","","","","Total latency: min","max","mean","stdev (usec)","Bw (KiB/s): min","max","aggregate percentage of total","mean","stdev","CPU usage : user","system","context switches","major faults","minor faults","I/O depths: <=1","2","4","8","16","32",">=64","I/O latencies microseconds: <=2","4","10","20","50","100","250","500","750","1000","I/O latencies milliseconds: <=2","4","10","20","50","100","250","500","750","1000","2000",">=2000","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","wr1te ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue","disk utilization percentage","disk name","read ios","write ios","read merges","write merges","read ticks","write ticks","time spent in queue", "disk utilization percentage"]
+
+   var output = document.getElementById("Fresult").value;
+   if(output.length == 0) {return;}
+   //입력값이 없으면 펑션 작동 중지
+
+   var target = document.getElementById('ttt');
+   if(target.hasChildNodes) {
+      target.innerHTML="";
+   }
+   //생성된 테이블이 있으면 생성된 테이블 삭제
+
+   var tmpr = output.split("\n");
+   var parsedstr = []
+   for(var i=0 ; i < tmpr.length ; i++){
+     if(tmpr[i].length>0){             // 마지막에 개행문자 들어가 있을 경우를 방지
+        parsedstr.push(tmpr[i].split(";"))
+    }
+  }
+
+   var fragment = document.createDocumentFragment();
+
+   var tdData = [];
+   var counter =0;
+   var plength = parsedstr[counter].length;
+
+   for(var j=0; j < plength; j++){
+     counter ++;
+     var inner = '<td align="right" width="220" style="border-collapse:collapse; border:3px gray solid;">' + index[j] + '</td>'
+      for (var i = 0; i < parsedstr.length; i++) {
+        if(index[j]=="disk utilization percentage"&&parsedstr[i][j]!="100.00%")
+            inner = inner + '<td align="center" width="120" bgcolor="yellow" style="border-collapse:collapse; border:3px black solid;">' + parsedstr[i][j].toString() + '</td>';
+        else if(index[j]=="read ios"&&parsedstr[i][j]<=150)
+            inner = inner + '<td align="center" width="120" bgcolor="red" style="border-collapse:collapse; border:3px gray solid;">' + parsedstr[i][j].toString() + '</td>';
+        else if(index[j]=="write ios"&&parsedstr[i][j]<=150)
+            inner = inner + '<td align="center" width="120" bgcolor="red" style="border-collapse:collapse; border:3px gray solid;">' + parsedstr[i][j].toString() + '</td>';
+        else if(index[j]=="read ticks"&&parsedstr[i][j]<=150)
+            inner = inner + '<td align="center" width="120" bgcolor="red" style="border-collapse:collapse; border:3px gray solid;">' + parsedstr[i][j].toString() + '</td>';
+        else if(index[j]=="write ticks"&&parsedstr[i][j]<=150)
+            inner = inner + '<td align="center" width="120" bgcolor="red" style="border-collapse:collapse; border:3px gray solid;">' + parsedstr[i][j].toString() + '</td>';
+        else if(index[j]=="disk name")
+            inner = inner + '<td align="center" width="120" bgcolor="gray" style="border-collapse:collapse; border:3px gray solid;">' + parsedstr[i][j].toString() + '</td>';
+        else
+            inner = inner + '<td align="center" width="120" bgcolor="white" style="border-collapse:collapse; border:3px gray solid;">' + parsedstr[i][j].toString() + '</td>';
+        }tdData.push(inner);
+    }
+        for(var i=0; i < plength; i++){
+          var row = document.createElement('tr');
+          row.innerHTML += tdData[i];
+          fragment.appendChild(row);
+        }
+
+   target.appendChild(fragment);
+}
+
+</script>
+
+</body>
+</html>

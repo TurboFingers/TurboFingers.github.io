@@ -1,0 +1,12 @@
+/* TCMD */
+
+CTRL + B 	- directory branch: show content of current dir and all subdirs in one list
+CTRL + S	- Open quick filter dialog
+
+
+command prompt
+
+/* Windows */
+
+Ctrl + E	- open explorer
+Ctrl + F	- find
