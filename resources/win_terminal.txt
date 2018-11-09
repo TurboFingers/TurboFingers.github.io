@@ -10,7 +10,8 @@ navigation button UP/Down
 
 ### 
 tasklist /v					- taks list with window name
-
+powercfg energy					
+Start-Process powershell -Verb runAs		- switch to Administrator mode
 
 =========================
 # NETWORK		|
