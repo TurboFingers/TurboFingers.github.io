@@ -8,5 +8,6 @@ command prompt
 
 /* Windows */
 
-Ctrl + E	- open explorer
-Ctrl + F	- find
+Ctrl + E		- open explorer
+Ctrl + F		- find
+WinKey Credentials	- Credentials Manager
