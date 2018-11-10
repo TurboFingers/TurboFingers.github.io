@@ -29,6 +29,8 @@ git --version					- git version
 git init						- new repository in current folder
 git add readme.txt				- add readme file
 
+git config --global credential.helper wincred	- set wincred as main creditians manager
+
 
 git log					- commits list
 git log --oneline --decorate --all	- short commit list
