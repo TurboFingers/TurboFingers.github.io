@@ -13,11 +13,11 @@
 </head>
 
 <body>
-
+<input type="checkbox" id="selected">
 <div id="top_cont">
 	<div id="top_header">
 		<div id="top_header_left"><p>TURBO FINGERS</p></div>
-		<div id="top_header_right">xyz@</div>
+		<div id="top_header_right">madayou@</div>
 	</div>
 	<div id="top_menu">
 		<div id="top_menu_left">
@@ -84,26 +84,22 @@
 		</nav>
 			<div class="stopwatch"></div>
 			<ul class="results"> <script type="text/javascript" src="js/stopwatch.js"></script></ul>
-				-->
-			<iframe name="iframe_middle_part" frameborder="0" height="100%" width="100%"></iframe>
 
+			<iframe name="iframe_middle_part" frameborder="0" height="100%" width="100%"></iframe>
+			-->
+			<iframe name="iframe_middle_part" frameborder="0" width="100%" height="800"></iframe>
 		</div>
 		<div id="main_panel_right">
+			<div id="section_spacer">
+			&nbsp;
+			</div>
 			<div id="section_time">
-				<div id="time_spacer">&nbsp;</div>
 				<div id="czas" class="time_clock">
 				 <script type="text/javascript" src="js/clock.js"></script>
 				</div>
-				<div id="time_control">&nbsp;</div>
-				<div id="time_menu">
-					<ul id="time_menu_nav"> 
-					<li><a href="index.html" target="czas" >Clock</a></li>
-					<li><a href="index.html">Shift</a></li>
-					<li><a href="index.html">Timer</a></li>
-					</ul>
-				</div>
+				<div id="time_zone">DUBLIN</div>
 
-			
+
 			</div>
 			<div id="section_spacer">
 			&nbsp;
@@ -119,7 +115,9 @@
 					 <li><a href="t_q_monitor.html" target="_blank"><img src="img/dot_green.ico">&nbsp;Queue Monitor</a></li>  
 				</ul>
 			</div>
-
+			<div id="section_spacer">
+			&nbsp;
+			</div>
 
 						
 		</div>
@@ -127,17 +125,34 @@
 	</div>
 </div>
 
-<div id="footerCont">
-	<div id="footer">
-		<div id="footerleft">
-			<p><a title="back to top" href="#top_cont">Back to Top ^</a></p>
-		</div>
-		<div id="footerright">
-			<p>abcd</p>
-		</div>
-	
-	</div>
+<div id="footer_bar">
+		<label for="selected"> <!-- footer bar as part of hidden div -->
+			<img src="img/icon_draw_small.png" alt="Clip"/>
+		</label>
+			
+        <form  id="hidden_div"> <!-- hidden div -->
+            <textarea></textarea>
+        </form>
 </div>
+
+<!--
+<div id="slideout">
+    <img src="http://img.usabilitypost.com.s3.amazonaws.com/1104/css_slideout/feedback.png" alt="Clipboard" />
+    <div id="slideout_inner">
+        <form>
+            <textarea></textarea>
+
+        </form>
+    </div>
+</div>
+-->
+<!--
+	<div id="footer">
+
+			<p><a title="back to top" href="#top_cont">Back to Top ^</a></p>
+		<textarea class="textarea" cols="150" rows="4" > Yo can copy and paste in to this box.</textarea>
+	</div>
+-->
 
 </body>
 
