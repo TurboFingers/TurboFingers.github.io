@@ -11,10 +11,10 @@ Home page https://autohotkey.com/
 =========================
 # emails				|
 ================================================================================
-m@		- madayou@wp.pl
-q@		- squadim@gmail.com
-pm@		- pmadaj@amazon.com
-pmb@		- pmbank@protonmail.com
+m@		- @wp.pl
+q@		- @gmail.com
+pm@		- @amazon.com
+pmb@		- @protonmail.com
 
 =========================
 # headers & characters		|

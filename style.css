@@ -388,3 +388,15 @@ input[type=checkbox]:checked ~ #footer_bar {
 	}
 
 
+.iframe_middle_part { /* pole tekstowe */
+    background-color: #fbfbfb;
+    border: 1px solid #a0a0a0;
+    padding: 3px 7px 10px 7px;
+    box-shadow: 1px 1px 3px #EEEEEE inset;
+    color: white;
+    font-size: 16px;
+    font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
+    #padding: 1.6rem;
+	width: 98%;
+	height: 95%;
+	}
