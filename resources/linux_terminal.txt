@@ -71,6 +71,13 @@ ping 127.0.0.0					- loop ping (to test network card)
 who						- loged users list
 write <user> <pts/**> Enter			- Start a message 
 
+sudo ifconfig wlan0 up				- turn ON wlan0 interface
+sudo ifconfig wlan0 down			- turn OFF wlan0 interface
+
+
+
+	
+
 
 =========================
 # REMOTE HOST		|
