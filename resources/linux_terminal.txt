@@ -71,6 +71,19 @@ ping 127.0.0.0					- loop ping (to test network card)
 who						- loged users list
 write <user> <pts/**> Enter			- Start a message 
 
+
+=========================
+# REMOTE HOST		|
+================================================================================
+error:
+Offending RSA key in /c/Users/pit/.ssh/known_hosts:4
+RSA host key for 192.168.1.11 has changed and you have requested strict checking.
+Host key verification failed.
+
+sudo sed -i "4d" /c/Users/pit/.ssh/known_hosts	- add host to known_hosts list
+sudo ssh -o 'StrictHostKeyChecking no' IP	- don't check known_hosts
+
+
 =========================
 # Other			|
 ================================================================================
