@@ -132,8 +132,9 @@ sudo adduser <user_name> <group_name>		- add user to specific group
 =========================
 # screen		|
 ================================================================================
-screen -S <sesion_name>				- create a new sesion
+screen -S <session_name>			- create a new sesion
 screen -ls					- list curent sesion
+screen -x <session_name>			- to join to active screen
 CTRL + A & CTRL + D				- safe log out from the screen (terminal)
 CTRL + A : screenname new_screen_name		- rename sesion
 screen -r <id.sesion_name>			- login to sesion
