@@ -137,7 +137,7 @@ screen -ls					- list curent screen sesions
 screen -x <session_name>			- to join to active screen session
 screen -r <id.sesion_name>			- login to screen sesion
 CTRL + A & CTRL + D				- safe log out from the screen (terminal)
-CTRL + A : screenname new_screen_name		- rename screen sesion
+CTRL + A :sessionname new_screen_name		- rename screen sesion
 
 
 
