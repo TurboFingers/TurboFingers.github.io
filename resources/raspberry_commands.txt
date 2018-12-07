@@ -35,7 +35,16 @@ sudo systemctl enable smbd.service			- set samba as native service
 service samba restart					- restart 
 service samba status					- status
 
+sudo systemctl unmask samba
+sudo systemctl enable samba
+sudo systemctl restart samba
+
 cat /var/log/samba/log.%m				- logs
+rm -R /var/cache/samba/*				- clear cache files
+
+
+
+
 
 
 
