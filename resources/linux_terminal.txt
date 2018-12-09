@@ -148,4 +148,5 @@ sudo apt-get install gnome-schedule		- install crone
 crontab - e					- edit crone table
 crontab -l					- view your currently saved scheduled tasks
 select-editor					- change current crone tab editor
+0 */3 * * * uptime >> test_crone.txt		- run uptime command every 3hrs and save output in to the test_crone.txt file
 
