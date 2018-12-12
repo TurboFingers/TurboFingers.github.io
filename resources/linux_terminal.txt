@@ -138,7 +138,16 @@ screen -x <session_name>			- to join to active screen session
 screen -r <id.sesion_name>			- login to screen sesion
 CTRL + A & CTRL + D				- safe log out from the screen (terminal)
 CTRL + A :sessionname new_screen_name		- rename screen sesion
-
+Ctrl + a , w					- list of all windows
+Ctrl + a , A					- rename window
+Ctrl + a ?					- help menu
+Ctrl + a "					- selected window menu
+Ctrl + a, |					- split window vertical
+Ctrl + a, S					- split window horizontal	
+Ctrl + a TAB					- shitch to next pile
+Ctrl + a 0-1-2					- attach window to pile (0-1-2 window number)
+ctrl + a X					- close pile with window
+ctrl + a \					- kill screen sesion
 
 
 =========================
