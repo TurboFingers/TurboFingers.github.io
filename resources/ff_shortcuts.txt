@@ -15,3 +15,68 @@ ctrl + shift + pageDown	- move tab down
 about:support		- about protocols
 about:addons
 about:crashes
+
+
+ctrl + C - Copy items to clipboard
+ctrl + V - Paste items from clipboard
+ctrl + X - Cut and copy items to clipboard
+ctrl + Z - Undo last action
+ctrl + A - Select all items on page
+ctrl + D - Add page to favorites list
+ctrl + B - Open and organize favorites list
+ctrl + E - Open search companion
+ctrl + I - Open favorites list
+ctrl + H - Open history list
+ctrl + P - Print page
+ctrl + S - Save page
+ctrl + W - Close window
+ctrl + N - Open new window
+ctrl + L - Go to a new location
+ctrl + O - Go to a new location
+ctrl + f5 - Unconditional refresh
+ctrl + R - Refresh page
+ctrl + F - Find on this page
+ctrl + TAB - Move forward between frames
+ctrl + ENTER - Add www. and .com to address bar entry
+ctrl + LEFT ARROW - Move cursor left to break in address bar
+ctrl + RIGHT ARROW - Move cursor right to break in address bar
+ctrl + PRNT SCN - Capture whole screen
+ctrl + CLICK - Open multiple favorite folders
+
+ALT + D - Select address bar text
+ALT + Z - Display zoom percentages in print preview
+ALT + C - Close print preview
+ALT + PLUS - Print preview zoom in
+ALT + MINUS - Print preview zoom out
+ALT + END - Show last page to be printed
+ALT + HOME - Show first page to be printed
+ALT + RIGHT ARROW - Next page
+ALT + LEFT ARROW - Previous page
+ALT + A - Number of pages shown in print preview
+ALT + P - Set print options
+ALT + U - Change Page setup in print preview
+ALT + HOME - Return to your homepage
+ALT + G - Toggle to Google Toolbar
+ALT + F4 - Close Window
+ALT + TAB - Cycles through running applications
+ALT + PRNT SCN - Screen capture
+
+SHIFT + CLICK - Open link in new window
+SHIFT + F3 - Cycle Caps
+SHIFT + F10 - Right click menu
+
+WINDOWS + M - Minimize all windows
+WINDOWS + D - Show desktop
+WINDOWS + TAB - Cycle through taskbar
+WINDOWS + R - Run
+WINDOWS + E - Open Windows Explorer
+
+UP ARROW - Scroll up
+DOWN ARROW - Scroll down
+TAB - Toggle forward through page items
+ESC - Stop downloading page
+BACKSPACE - Back button
+F1 - Display help
+f5 - Refresh page
+F11 - Toggle full screen mode
+
