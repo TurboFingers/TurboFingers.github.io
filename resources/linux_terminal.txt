@@ -67,10 +67,16 @@ ls /dev/sd*					- List of all partitions
 sudo fdisk -l					- Show all drives attached
 cat /proc/partitions				- Show all partitions
 cat /proc/mounts				- Show mounted points 
+mount						- As above
 
 smartctl -t /dev/sda				- SMART Health Status
 smartctl --info /dev/sda			- Device information
+smartctl  -t  short  /dev/sda			- Start a short test.
+smartctl  -t  long  /dev/sda			- Start a long test
+smartctl  -X  /dev/sda				- Cancel the currently running test
+smartctl  -c  /dev/sda				- Get current test status
 
+cat /proc/mdstat/				- Show RAID configuration
 mdadm --manage /dev/md0 --fail /dev/sda1	- mark partition sda1 on raid controler md0 as fail
 mdadm --manage /dev/md0 --remove /dev/sda1	- remove partition sda1 on raid controler md0
 for i in `ls /dev/md?`; do mdadm --manage $i --remove faulty; done
@@ -124,6 +130,8 @@ error:
 Offending RSA key in /c/Users/pit/.ssh/known_hosts:4
 RSA host key for 192.168.1.11 has changed and you have requested strict checking.
 Host key verification failed.
+
+cat ~/.ssh/known_hosts				- Show know hosts table
 
 sudo sed -i "4d" /c/Users/pit/.ssh/known_hosts	- add host to known_hosts list
 sudo ssh -o 'StrictHostKeyChecking no' IP	- don't check known_hosts
