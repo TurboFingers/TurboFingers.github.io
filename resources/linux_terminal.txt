@@ -43,6 +43,44 @@ sudo apt-get purge google-earth-stable -  ex of google earth
 
 dd if=/sciezka_do_obrazu.iso of=/dev/sdX - wypalanie pliku iso na pendrive
 
+
+=========================
+# Hard Drive		|
+================================================================================
+df -h						- Shows the amount of disk space 
+df -a -h					- Option -a shows filesystems that have a size of zero blocks
+df -T -h					- option -T shows type of each filesystems
+df -oo						- Shows the amount of disk space with all details
+
+
+du -h						- Shows the amount of disk space used by the specified files and for each subdirectory
+du -sh /tmp/					- shows summarized disk usage for /tmp/ directory
+du -sh /*					- shows summarized disk usage for main tree directory
+du -a /etc/ | sort -n -r | head -n 10		- 
+
+ncdu						- Check disk space usage - GUI 
+i						- Show information about selected item 
+g						- Show percentage and/or graph
+?						- Show help
+
+ls /dev/sd*					- List of all partitions
+sudo fdisk -l					- Show all drives attached
+cat /proc/partitions				- Show all partitions
+cat /proc/mounts				- Show mounted points 
+
+smartctl -t /dev/sda				- SMART Health Status
+smartctl --info /dev/sda			- Device information
+
+mdadm --manage /dev/md0 --fail /dev/sda1	- mark partition sda1 on raid controler md0 as fail
+mdadm --manage /dev/md0 --remove /dev/sda1	- remove partition sda1 on raid controler md0
+for i in `ls /dev/md?`; do mdadm --manage $i --remove faulty; done
+						- this is one command to remove all faulty partitions
+
+fdisk -l /dev/sda				- check the new drive that is added 
+sfdisk -d /dev/sda | sfdisk /dev/sdb		- copy partitions from sda to sdb
+mdadm --manage /dev/md0 --add /dev/sda1		- add the new partitions to the exisitng arrays:
+
+
 =========================
 # INFO and APP 		|
 ================================================================================
