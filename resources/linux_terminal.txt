@@ -118,6 +118,10 @@ write <user> <pts/**> Enter			- Start a message
 sudo ifconfig wlan0 up				- turn ON wlan0 interface
 sudo ifconfig wlan0 down			- turn OFF wlan0 interface
 
+sudo nmap -O <IP>				- Scan for the host operating system
+sudo nmap -sT <IP>				- Scan for TCP connections
+
+
 
 
 	
