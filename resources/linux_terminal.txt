@@ -109,8 +109,9 @@ sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
 ping -c4 [IP ADDRESS]				- send ping four times only
 nmap -sP 192.168.1.1-254 			- search addresses from1 to 254	
 
-arp -a						- to get mac and IP addresses in loccal network
-route						- IP routing table
+arp -n	(check -a option)			- to get mac and IP addresses in loccal network
+route -n					- IP routing table
+ip neighbor show				- Show neighbo IP and MAC
 ping 127.0.0.0					- loop ping (to test network card)
 
 who						- loged users list
@@ -123,11 +124,11 @@ sudo nmap -O <IP>				- Scan for the host operating system
 sudo nmap -sT <IP>				- Scan for TCP connections
 
 
+ip neigh|grep "$(ip -4 route list 0/0|head -1|cut -d' ' -f3) "|cut -d' ' -f5|tr '[a-f]' '[A-F]'
+						- Show default gateway MAC address
 
 
 	
-
-
 =========================
 # REMOTE HOST		|
 ================================================================================
@@ -209,4 +210,7 @@ crontab - e					- edit crone table
 crontab -l					- view your currently saved scheduled tasks
 select-editor					- change current crone tab editor
 0 */3 * * * uptime >> test_crone.txt		- run uptime command every 3hrs and save output in to the test_crone.txt file
+
+
+
 
