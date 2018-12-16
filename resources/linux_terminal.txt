@@ -110,6 +110,7 @@ ping -c4 [IP ADDRESS]				- send ping four times only
 nmap -sP 192.168.1.1-254 			- search addresses from1 to 254	
 
 arp -a						- to get mac and IP addresses in loccal network
+route						- IP routing table
 ping 127.0.0.0					- loop ping (to test network card)
 
 who						- loged users list
