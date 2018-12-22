@@ -180,9 +180,44 @@ userdel -r <user_name>				- remove user, home direcory ane email
 groups <user_name>				- show the groups to which user belong
 sudo adduser <user_name> <group_name>		- add user to specific group
 
+=========================
+# Passwords		|
+================================================================================
+sudo cat /etc/shadow				- password file
+sudo pwck -r /etc/shadow			- show users logins
+ls -l /usr/bin/passwd				- user permissions
+
+sudo passwd					- change your own password
+sudo passwd <user_name>				- change other users password
+
+
+/etc/shadow file example
+
+root:$1$fnfffc$pGteyHdicpGOfffXX4ow#5:12053:0:99999:7:::
+
+1. Username : It is your login name.
+2. Password : It is your encrypted password. The password should be minimum 8-12 characters long
+including special characters, digits, lower case alphabetic and more. Usually password format is 
+set to $id$salt$hashed, The $id is the algorithm used On GNU/Linux as follows:
+  a. $1$ is MD5
+  b. $2a$ is Blowfish
+  c. $2y$ is Blowfish
+  d. $5$ is SHA-256
+  e. $6$ is SHA-512
+3. Last password change (lastchanged) : Days since Jan 1, 1970 that password was last changed
+4. Minimum : The minimum number of days required between password changes i.e. the number of days left before
+the user is allowed to change his/her password
+5. Maximum : The maximum number of days the password is valid (after that user is forced to change his/her password)
+6. Warn : The number of days before password is to expire that user is warned that his/her password must be changed
+7. Inactive : The number of days after password expires that account is disabled
+8. Expire : days since Jan 1, 1970 that account is disabled i.e. an absolute date specifying when the login may no longer be used.
+
+
+	
+
 
 =========================
-# screen		|
+# Screen		|
 ================================================================================
 screen -S <session_name>			- create a new screen sesion
 screen -ls					- list curent screen sesions
@@ -203,13 +238,29 @@ ctrl + a \					- kill screen sesion
 
 
 =========================
-# crone		|
+# cron jobs		|
 ================================================================================
 sudo apt-get install gnome-schedule		- install crone 
 crontab - e					- edit crone table
 crontab -l					- view your currently saved scheduled tasks
 select-editor					- change current crone tab editor
 0 */3 * * * uptime >> test_crone.txt		- run uptime command every 3hrs and save output in to the test_crone.txt file
+
+
+=========================
+# history		|
+================================================================================
+
+history						- Shows history commands
+history 10					- Shows last 10 history commands
+history | grep ssh				- Shows lines that have ssh 
+! <history_number>				- Paste command from history
+
+
+
+
+
+
 
 
 
