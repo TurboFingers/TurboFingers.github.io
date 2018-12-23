@@ -42,12 +42,8 @@ sudo systemctl restart samba
 cat /var/log/samba/log.%m				- logs
 rm -R /var/cache/samba/*				- clear cache files
 
-
-
-
-
-
-
+sudo apt-get update					- system update
+sudo apt-get dist-upgrade				- system upgrade
 
 
 
@@ -144,4 +140,20 @@ sudo service apache2 restart				- restart apache
 def -h /						- show RAM usage
 sudo fdisk -l						- 
 cat /proc/meminfo					- memory details
+
+
+=========================
+# Domoticz		|
+================================================================================
+sudo curl -L install.domoticz.com | bash		- install domoticz
+
+
+
+
+
+
+
+
+
+
 
