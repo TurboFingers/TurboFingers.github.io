@@ -86,6 +86,16 @@ fdisk -l /dev/sda				- check the new drive that is added
 sfdisk -d /dev/sda | sfdisk /dev/sdb		- copy partitions from sda to sdb
 mdadm --manage /dev/md0 --add /dev/sda1		- add the new partitions to the exisitng arrays:
 
+=========================
+# FSTAB			|
+================================================================================
+
+sudo vim /etc/fstab/				- edit fstab file
+sudo mount -a					- reload fstab file
+
+
+
+
 
 =========================
 # INFO and APP 		|
