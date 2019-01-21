@@ -28,6 +28,7 @@ the RPi sees is not connected to ground.
 
 /etc/samba/smb.conf					- config file
 testparm						- test samba configs
+smbd --version						- samba version
 
 smbpasswd -a pi						- set user 'pi'
 sudo systemctl enable smbd.service			- set samba as native service
