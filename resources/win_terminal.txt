@@ -35,23 +35,6 @@ for /L %i in (1,1,254) do ping 192.168.1.%i -n 2 > c:\pingowanie.txt
 %TEMP%			- temoproary folder
 taskmgr			- Task Manager
 %appdata%		- all programs setings folder
-%AppData%\Microsoft\Windows\Start Menu\Programs\Startup - startup
-
-
-
-
-	
-| clip - redirect output to clip
-> abc.txt - redirect output to file
-
-&& - execute multiple commands
-
-
-
-driverquery - drivers list
-
-title /madayou/ - customize the Command Prompt Title Bar
-
 
 =========================
 # Folders & variables	|
@@ -76,3 +59,21 @@ mklink /D skrzynka c:\_x_drive\Dropbox\skrzynka
 
 will create symbolink link in C drive to c:\_x_drive\Dropbox\skrzynka
 	
+	
+| clip - redirect output to clip
+> abc.txt - redirect output to file
+
+&& - execute multiple commands
+
+
+
+driverquery - drivers list
+
+title /madayou/ - customize the Command Prompt Title Bar
+
+
+
+
+
+
+
