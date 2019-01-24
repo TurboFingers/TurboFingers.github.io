@@ -6,19 +6,10 @@
 	I colected all useful shortcuts, the list is groving up every day
 	 
 
-alias	|windows files locations	|					
--------------------------------------------------------------------------------
-git	|/c/_winapp/git/scripts		| all script files
-dropbox	|/c/_xdrive/Dropbox/_work/bash	| all script files backup
-	|/c/_xdrive/Dropbox/_edu/	| all manuals
-pit	|/c/Users/pit			| settings files (.bashrc && .viminfo)
-
-
- 
 =============================================================================== 
 =  T e r m i n a l							      =
 =============================================================================== 
-
+CTRL + ALT + T	- open a new terminal window
 CTRL + a	- move cursor to begining of the line
 CTRL + u	- move coursor to the end of the line
 CTRL + u	- delete text from cursor to begining of the line
