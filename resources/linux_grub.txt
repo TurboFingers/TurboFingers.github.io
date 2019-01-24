@@ -1,0 +1,26 @@
+================================================================================
+# GRUB2 boot loader					    | date: 24_01_2019 # 
+================================================================================
+
+sudo gedit /etc/grub.d/40_custom		- edit custom boot option
+sudo update-grub				- update grub
+
+
+
+
+=========================
+# 40_custom - sample	|
+================================================================================
+menuentry "Menu name" {
+set isofile=”/home/user/Downloads/ubuntu***.iso”
+loopback loop (hd0,1)$isofile
+linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=${isofile} quiet splash
+initrd (loop)/casper/initrd.lz
+}
+
+#/casper/vmlinuz.efi				- check this path in *.iso file
+#/casper/initrd.lz				- check this path in *.iso file
+# Customize the boot entry to contain your desiredmenu entry name, the correct path to the ISO file on your computer,
+# and the device name of the hard disk and partition containing the ISO file. If the vmlinuz and initrd files have different
+# names or paths, be sure to specify the correct path to those files, too.
+
