@@ -35,6 +35,7 @@ for /L %i in (1,1,254) do ping 192.168.1.%i -n 2 > c:\pingowanie.txt
 %TEMP%			- temoproary folder
 taskmgr			- Task Manager
 %appdata%		- all programs setings folder
+%AppData%\Microsoft\Windows\Start Menu\Programs\Startup - startup
 
 
 

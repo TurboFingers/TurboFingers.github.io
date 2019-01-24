@@ -12,7 +12,7 @@ sudo update-grub				- update grub
 # 40_custom - sample	|
 ================================================================================
 menuentry "Menu name" {
-set isofile=”/home/user/Downloads/ubuntu***.iso”
+set isofile="/home/user/Downloads/ubuntu***.iso"
 loopback loop (hd0,1)$isofile
 linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=${isofile} quiet splash
 initrd (loop)/casper/initrd.lz
