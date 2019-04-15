@@ -267,6 +267,20 @@ history 10					- Shows last 10 history commands
 history | grep ssh				- Shows lines that have ssh 
 ! <history_number>				- Paste command from history
 
+=========================
+# VNC server		|
+================================================================================
+which vncserver					- check if vnc server is install
+vncpasswd					- set up/change vnc password
+ps aux | grep vnc				- check if VNC server is running
+vncserver					- start VNC server
+cd ./vnc					- log files and settings for VNC server
+vncserver -kill :1				- stop vnc serwer (instance 1)
+
+
+
+
+
 
 
 
