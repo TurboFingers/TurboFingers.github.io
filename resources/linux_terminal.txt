@@ -45,6 +45,18 @@ dd if=/sciezka_do_obrazu.iso of=/dev/sdX - wypalanie pliku iso na pendrive
 
 
 =========================
+# In/Out Redirection	|
+================================================================================
+
+ping -c4 google.com > google_ping.log		- redirect output to the file (overwrite if file exist)
+echo "Hello there" >> google_ping.log		- redirect output to the file (appended to the existing file)
+
+
+
+
+
+
+=========================
 # Hard Drive		|
 ================================================================================
 df -h						- Shows the amount of disk space 
@@ -117,6 +129,7 @@ sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
 ================================================================================
 
 ping -c4 [IP ADDRESS]				- send ping four times only
+ping -i0.2 [IP ADDRESS]				- send ping every 200ms
 nmap -sP 192.168.1.1-254 			- search addresses from1 to 254	
 
 arp -n	(check -a option)			- to get mac and IP addresses in loccal network
