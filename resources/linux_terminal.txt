@@ -1,8 +1,9 @@
 ================================================================================
 # Linux Terminal commands				    | date: 03_05_2017 # 
 ================================================================================
-
-
+bash [program.sh]				- execute a script
+. .bashrc					- reload .bashrc file
+source .bashrc					- ^^^^^^^^^^^^^^^^^^^
 
 
 =========================
@@ -12,17 +13,30 @@ cd -	go to the last location
 pwd	current folder
 ls	list of files and folders
 ls -a	list and atributes
+
 touch [file name]	make a tekst file
+
 mv file_name direcorty				- move files
 mv smb.conf smb.conf.$(date +%F)		- add the date to the file name
+
 cp file file_$(date +%D|sed 's/\//_/g')		- add date at the end (_22_03_2018)
 cp file file_$(date +%F|sed 's/\-/_/g')		- add date at the end (_2018_03_26)
 
-### scp - secure copy
+cp [file name] [destination]	file copy
+rm -rf [directory_name]				- remove directory
 
+find -name "truecr*"				- find file "truecr*"
+find /home/ubuntu/ -iname 'nozbe*' -print 
+
+
+### scp - secure copy
 scp [file_in_local_machine] user@server.com:/home/user/
 
+### Sync Files and Directories to or from server
+rsync [file_in_local_machine/catalog] -avz user@server.com:/home/user/		-  copies and sync files to remote system
+rsync [file_in_local_machine/catalog] -avzhe ssh user@server.com:/home/user/	-  copies and sync files to remote system using ssh
 
+### grep
 grep -ve ^# -ve '^;' -ve ^$ smb.conf.2018-03-12 > smb.conf
 filter the file smb.conf.2018-03-12 and save output to file smb.conf
 -ve	- reverse expression
@@ -30,14 +44,6 @@ filter the file smb.conf.2018-03-12 and save output to file smb.conf
 '^;'	- remove ; symbol (needs '' as this is a special character)
 ^$	- remove empty lines
 -e	- expresion
-
-
-cp [file name] [destination]	file copy
-rm -rf [directory_name]				- remove directory
-
-find -name "truecr*"				- find file "truecr*"
-find /home/ubuntu/ -iname 'nozbe*' -print 
-bash [program.sh] - instal program
 
 ### NTFS partition 
 sudo ntfsfix /dev/sdb2
