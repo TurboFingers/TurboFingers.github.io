@@ -13,6 +13,11 @@ tasklist /v					- taks list with window name
 powercfg energy					
 Start-Process powershell -Verb runAs		- switch to Administrator mode
 
+gpupdate /force					- updated global windows policy
+
+Computer\HKEY_CURRENT_USER\Software\Classes.html - set ValueData to : htmlfile
+issue with link in outlock 
+
 =========================
 # NETWORK		|
 ================================================================================
@@ -73,7 +78,7 @@ will create symbolink link in C drive to c:\_x_drive\Dropbox\skrzynka
 
 driverquery - drivers list
 
-title /madayou/ - customize the Command Prompt Title Bar
+title /xyz/ - customize the Command Prompt Title Bar
 
 
 
