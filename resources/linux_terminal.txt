@@ -18,6 +18,11 @@ mv smb.conf smb.conf.$(date +%F)		- add the date to the file name
 cp file file_$(date +%D|sed 's/\//_/g')		- add date at the end (_22_03_2018)
 cp file file_$(date +%F|sed 's/\-/_/g')		- add date at the end (_2018_03_26)
 
+### scp - secure copy
+
+scp [file_in_local_machine] user@server.com:/home/user/
+
+
 grep -ve ^# -ve '^;' -ve ^$ smb.conf.2018-03-12 > smb.conf
 filter the file smb.conf.2018-03-12 and save output to file smb.conf
 -ve	- reverse expression
