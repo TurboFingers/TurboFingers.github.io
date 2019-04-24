@@ -142,6 +142,8 @@ route -n					- IP routing table
 ip neighbor show				- Show neighbo IP and MAC
 ping 127.0.0.0					- loop ping (to test network card)
 
+traceroute [IP ADDRESS]				- show the devices IP beetwen  
+
 who						- loged users list
 write <user> <pts/**> Enter			- Start a message 
 
@@ -151,6 +153,9 @@ sudo ifconfig wlan0 down			- turn OFF wlan0 interface
 sudo nmap -O <IP>				- Scan for the host operating system
 sudo nmap -sT <IP>				- Scan for TCP connections
 
+traceload					- Network trafic
+cat /etc/services				- ports list
+cat /etc/services | grep SSL			- show all ports over SSL
 
 ip neigh|grep "$(ip -4 route list 0/0|head -1|cut -d' ' -f3) "|cut -d' ' -f5|tr '[a-f]' '[A-F]'
 						- Show default gateway MAC address

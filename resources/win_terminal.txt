@@ -21,11 +21,15 @@ getmac			- mac addresses of all wirless devices
 nslookup google.com	- check IP address of any webside
 arp -a			- IP addresses
 ipconfig		- get IP addresses
+ipconfig /flushdns	- clear DNS cache
+
 netstat			
 ping 127.0.0.1		- loop ping
 
 for /L %i in (1,1,254) do ping 192.168.1.%i -n 2 > c:\pingowanie.txt
 			- ping Ips in local network
+
+
 
 
 
