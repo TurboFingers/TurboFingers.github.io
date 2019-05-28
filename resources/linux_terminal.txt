@@ -1,6 +1,6 @@
-================================================================================
+# ================================================================================
 # Linux Terminal commands				    | date: 03_05_2017 # 
-================================================================================
+# ================================================================================
 bash [program.sh]				- execute a script
 . .bashrc					- reload .bashrc file
 source .bashrc					- ^^^^^^^^^^^^^^^^^^^
@@ -14,19 +14,22 @@ pwd	current folder
 ls	list of files and folders
 ls -a	list and atributes
 
-touch [file name]	make a tekst file
 
 mv file_name direcorty				- move files
 mv smb.conf smb.conf.$(date +%F)		- add the date to the file name
-
-cp file file_$(date +%D|sed 's/\//_/g')		- add date at the end (_22_03_2018)
-cp file file_$(date +%F|sed 's/\-/_/g')		- add date at the end (_2018_03_26)
 
 cp [file name] [destination]	file copy
 rm -rf [directory_name]				- remove directory
 
 find -name "truecr*"				- find file "truecr*"
 find /home/ubuntu/ -iname 'nozbe*' -print 
+
+### operating on files
+tr -s ''< file_a.txt > file_b.txt		- remove all consecutive saces to a single space
+touch [file name]				- make a tekst file
+cp file file_$(date +%D|sed 's/\//_/g')		- add date at the end (_22_03_2018)
+cp file file_$(date +%F|sed 's/\-/_/g')		- add date at the end (_2018_03_26)
+
 
 
 ### scp - secure copy
@@ -53,6 +56,15 @@ sudo ntfsfix /dev/sdb2
 sudo apt-get purge google-earth-stable -  ex of google earth
 
 dd if=/sciezka_do_obrazu.iso of=/dev/sdX - wypalanie pliku iso na pendrive
+
+=========================
+# cat			|
+================================================================================
+
+cat -n						- print line numbers before each line in a file
+cat -T						- show tabs
+
+
 
 
 =========================
@@ -133,6 +145,8 @@ bash [program.sh] 				- instal program
 sudo apt-get remove app_name			- uninstal program
 sudo apt-get autoclean				- clean after uninstal
 sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
+dpkg --list							- list of all installed packag
+sudo apt-get --purge remove	[name]	- uninstal [name] program
 
 
 =========================
