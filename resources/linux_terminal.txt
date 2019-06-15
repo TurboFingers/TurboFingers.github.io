@@ -92,6 +92,10 @@ du -h						- Shows the amount of disk space used by the specified files and for 
 du -sh /tmp/					- shows summarized disk usage for /tmp/ directory
 du -sh /*					- shows summarized disk usage for main tree directory
 du -a /etc/ | sort -n -r | head -n 10		- 
+du -ch --max-depth=1		- Shows the amount of disk space used by each directory
+
+lsblk						- directory tree
+
 
 ncdu						- Check disk space usage - GUI 
 i						- Show information about selected item 
