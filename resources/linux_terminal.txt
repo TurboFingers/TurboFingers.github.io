@@ -312,10 +312,14 @@ cd /etc/cron.d/					- folder where all cron files are stored (separate files)
 # history		|
 ================================================================================
 
-history						- Shows history commands
-history 10					- Shows last 10 history commands
+!!								- execute last comand from history
+history							- Shows history commands
+history 10						- Shows last 10 history commands
 history | grep ssh				- Shows lines that have ssh 
 ! <history_number>				- Paste command from history
+history -c 						- clear history
+.bash_history					- file where all history comands are stored 
+
 
 =========================
 # VNC server		|

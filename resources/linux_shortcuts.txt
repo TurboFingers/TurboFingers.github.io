@@ -9,11 +9,17 @@
 =============================================================================== 
 =  T e r m i n a l							      =
 =============================================================================== 
-CTRL + ALT + T	- open a new terminal window
-CTRL + a	- move cursor to begining of the line
-CTRL + u	- move coursor to the end of the line
-CTRL + u	- delete text from cursor to begining of the line
-CTRL + k	- delete text from cursor to end of the line
+CTRL + ALT + T		- open a new terminal window
+CTRL + a			- move cursor to begining of the line
+CTRL + e			- move coursor to the end of the line
+CTRL + u			- delete text from cursor to begining of the line
+CTRL + k			- delete text from cursor to end of the line
+CTRL + <- | ->		- move cursor by words
+
+ESC + U				- converts text from the cursor to the end of the line to uppercase
+ESC + L				- converts text from the cursor to the end of the line to lowercase
+ESC + C				- converts text under the cursor to uppercase
+
 
 
 CTRL + c	- stop command
