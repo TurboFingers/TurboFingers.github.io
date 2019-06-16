@@ -160,6 +160,7 @@ sudo apt-get --purge remove	[name]	- uninstal [name] program
 ping -c4 [IP ADDRESS]				- send ping four times only
 ping -i0.2 [IP ADDRESS]				- send ping every 200ms
 nmap -sP 192.168.1.1-254 			- search addresses from1 to 254	
+for i in `cat ping_STDIN.txt` ;do ping -c 1 $i;done			- send ping from ping_STDIN list
 
 arp -n	(check -a option)			- to get mac and IP addresses in loccal network
 route -n					- IP routing table
