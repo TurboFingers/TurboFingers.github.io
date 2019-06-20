@@ -26,6 +26,7 @@ getmac			- mac addresses of all wirless devices
 nslookup google.com	- check IP address of any webside
 arp -a			- IP addresses
 ipconfig		- get IP addresses
+ipconfig /displaydns	- show DNS cache
 ipconfig /flushdns	- clear DNS cache
 
 netstat			
