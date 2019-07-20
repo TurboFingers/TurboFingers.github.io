@@ -237,7 +237,7 @@ userdel -r <user_name>				- remove user, home direcory ane email
 
 groups <user_name>				- show the groups to which user belong
 sudo adduser <user_name> <group_name>		- add user to specific group
-sudo usermod -a -G sudo username - add existing user to sudo grup
+sudo usermod -a -G sudo username 	- add existing user to sudo grup
 cat /etc/group | grep sudo 		- show sudo users
 
 =========================
