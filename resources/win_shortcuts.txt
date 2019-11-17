@@ -11,3 +11,13 @@ command prompt
 Ctrl + E		- open explorer
 Ctrl + F		- find
 WinKey Credentials	- Credentials Manager
+
+
+Procesor overheat :
+Control Panel\Hardware and Sound\Power Options\Edit Plan Settings
+
+change power options
+Advance Settings
+Procesor Power Management
+MAximum procesor state
+change to 65%
