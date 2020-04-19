@@ -75,13 +75,15 @@ will create symbolink link in C drive to c:\_x_drive\Dropbox\skrzynka
 
 && - execute multiple commands
 
-
-
 driverquery - drivers list
-
 title /xyz/ - customize the Command Prompt Title Bar
 
-
+=========================
+# WiFI					|
+================================================================================
+netsh 													- Network menu 
+wlan show profile										- show all WiFi profiles
+wlan show profile [networkName] key=clear				- show WiFi password under 'Key Content' 
 
 
 

@@ -335,7 +335,13 @@ cd ./vnc					- log files and settings for VNC server
 vncserver -kill :1				- stop vnc serwer (instance 1)
 
 
-
+=========================
+# WiFi			|
+================================================================================
+cd /etc/NetworkManager/system-connections 	- folder with all connected network details
+ls -a						- show files in folder
+sudo cat [netowrk name]				- WiFi password is stored under 'psk='
+	
 
 
 
