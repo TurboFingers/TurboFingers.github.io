@@ -81,10 +81,15 @@ title /xyz/ - customize the Command Prompt Title Bar
 =========================
 # WiFI					|
 ================================================================================
+### CMD line
 netsh 													- Network menu 
 wlan show profile										- show all WiFi profiles
 wlan show profile [networkName] key=clear				- show WiFi password under 'Key Content' 
 
+### powerShell
+(netsh wlan show profiles) | Select-String “\:(.+)$” | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=”$name” key=clear)} | Select-String “Key Content\W+\:(.+)$” | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize
+
+this will list SSIDs and passwords from all network connected to device.
 
 
 
