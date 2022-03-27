@@ -185,6 +185,10 @@ cat /etc/services | grep SSL			- show all ports over SSL
 ip neigh|grep "$(ip -4 route list 0/0|head -1|cut -d' ' -f3) "|cut -d' ' -f5|tr '[a-f]' '[A-F]'
 						- Show default gateway MAC address
 
+curl -s ipinfo.io							- show ISP details
+curl ipinfo.io/8.8.8.8/org?token=$TOKEN		- show ISP org info only
+curl -s ipinfo.io/94.254.236.55/org?token=$TOKEN | awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}'
+
 
 	
 =========================

@@ -1,0 +1,30 @@
+================================================================================
+# CISCO terminal commands				    | date: 21_01_2022 # 
+================================================================================
+
+=========================
+# General		|
+================================================================================
+show version						- software version used on the switch
+show interfaces 
+
+
+
+
+=========================
+# error 		|
+================================================================================
+
+show errdisable recovery				- Shows the time period after which the interfaces are enabled for errdisable conditions.
+show etherchannel summary				- Shows the current status of the EtherChannel.
+show errdisable detect					- Displays the current settings of the errdisable timeout feature and, if any of the ports are currently error disabled, the reason that they are error disabled.
+sh interfaces Gi0/3 counters errors			- errors on specific port
+sh interfaces counters errors				- errors on all ports
+sh controller ethernet-controller fastEthernet 0/6	- sisplay trafic counter and error counter
+
+show interfaces status err-disabled			- show which local port is in errdisable status
+
+### https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/69980-errdisable-recovery.html
+
+
+	
