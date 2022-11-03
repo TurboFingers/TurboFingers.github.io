@@ -149,7 +149,7 @@ bash [program.sh] 				- instal program
 sudo apt-get remove app_name			- uninstal program
 sudo apt-get autoclean				- clean after uninstal
 sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
-dpkg --list							- list of all installed packag
+dpkg --list					- list of all installed packag
 sudo apt-get --purge remove	[name]	- uninstal [name] program
 
 
@@ -237,8 +237,9 @@ userdel -r <user_name>				- remove user, home direcory ane email
 
 groups <user_name>				- show the groups to which user belong
 sudo adduser <user_name> <group_name>		- add user to specific group
-sudo usermod -a -G sudo username 	- add existing user to sudo grup
-cat /etc/group | grep sudo 		- show sudo users
+sudo usermod -a -G sudo username 		- add existing user to sudo grup
+cat /etc/group | grep sudo 			- show sudo users
+cut -d: -f1 /etc/passwd 			- show users list
 
 =========================
 # Passwords		|
@@ -315,12 +316,12 @@ cd /etc/cron.d/					- folder where all cron files are stored (separate files)
 # history		|
 ================================================================================
 
-!!								- execute last comand from history
-history							- Shows history commands
-history 10						- Shows last 10 history commands
+!!						- execute last comand from history
+history						- Shows history commands
+history 10					- Shows last 10 history commands
 history | grep ssh				- Shows lines that have ssh 
 ! <history_number>				- Paste command from history
-history -c 						- clear history
+history -c 					- clear history
 .bash_history					- file where all history comands are stored 
 
 
