@@ -12,7 +12,10 @@ ip route					- Display current gateway
 ip neigh					- Show IPv6 neighbors
 ping 						- Check network connection to device
 
+cat /var/log/messages				- Output the error log
+tail -f /var/log/messages			- Monitor log file
 
+double TAB					- list of all available SSH commands
 
 =========================
 # Device settings	|

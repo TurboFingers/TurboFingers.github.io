@@ -10,6 +10,23 @@ show interfaces
 
 
 
+=========================
+# Config				|
+================================================================================
+
+dir flash:								- show files on flash memory
+copy running-config startup-config		- load running config to startup config
+clock set 21:02:00 05 May 2022			- set current date and time
+show clock detail						- show clock details
+(config)#clock timezone UTC 0			- timezone Warsaw
+
+
+
+
+
+
+
+
 
 =========================
 # error 		|
