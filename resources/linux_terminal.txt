@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ================================================================================
 # Linux Terminal commands				    | date: 03_05_2017 # 
 # ================================================================================
@@ -358,3 +359,361 @@ sudo cat [netowrk name]				- WiFi password is stored under 'psk='
 
 
 
+=======
+# ================================================================================
+# Linux Terminal commands				    | date: 03_05_2017 # 
+# ================================================================================
+bash [program.sh]				- execute a script
+. .bashrc					- reload .bashrc file
+source .bashrc					- ^^^^^^^^^^^^^^^^^^^
+
+
+=========================
+# FOLDERS AND FILES  	|
+================================================================================
+cd -	go to the last location		
+pwd	current folder
+ls	list of files and folders
+ls -a	list and atributes
+
+
+mv file_name direcorty				- move files
+mv smb.conf smb.conf.$(date +%F)		- add the date to the file name
+
+cp [file name] [destination]	file copy
+rm -rf [directory_name]				- remove directory
+
+find -name "truecr*"				- find file "truecr*"
+find /home/ubuntu/ -iname 'nozbe*' -print 
+
+### operating on files
+tr -s ''< file_a.txt > file_b.txt		- remove all consecutive saces to a single space
+touch [file name]				- make a tekst file
+cp file file_$(date +%D|sed 's/\//_/g')		- add date at the end (_22_03_2018)
+cp file file_$(date +%F|sed 's/\-/_/g')		- add date at the end (_2018_03_26)
+
+
+
+### scp - secure copy
+scp [file_in_local_machine] user@server.com:/home/user/
+
+### Sync Files and Directories to or from server
+rsync [file_in_local_machine/catalog] -avz user@server.com:/home/user/		-  copies and sync files to remote system
+rsync [file_in_local_machine/catalog] -avzhe ssh user@server.com:/home/user/	-  copies and sync files to remote system using ssh
+
+### grep
+grep -ve ^# -ve '^;' -ve ^$ smb.conf.2018-03-12 > smb.conf
+filter the file smb.conf.2018-03-12 and save output to file smb.conf
+-ve	- reverse expression
+^#	- remove # symbol
+'^;'	- remove ; symbol (needs '' as this is a special character)
+^$	- remove empty lines
+-e	- expresion
+
+### NTFS partition 
+sudo ntfsfix /dev/sdb2
+
+
+/* uninstall programs */
+sudo apt-get purge google-earth-stable -  ex of google earth
+
+dd if=/sciezka_do_obrazu.iso of=/dev/sdX - wypalanie pliku iso na pendrive
+
+=========================
+# cat			|
+================================================================================
+
+cat -n						- print line numbers before each line in a file
+cat -T						- show tabs
+
+
+
+
+=========================
+# In/Out Redirection	|
+================================================================================
+
+ping -c4 google.com > google_ping.log		- redirect output to the file (overwrite if file exist)
+echo "Hello there" >> google_ping.log		- redirect output to the file (appended to the existing file)
+
+
+
+
+
+
+=========================
+# Hard Drive		|
+================================================================================
+df -h						- Shows the amount of disk space 
+df -a -h					- Option -a shows filesystems that have a size of zero blocks
+df -T -h					- option -T shows type of each filesystems
+df -oo						- Shows the amount of disk space with all details
+
+
+du -h						- Shows the amount of disk space used by the specified files and for each subdirectory
+du -sh /tmp/					- shows summarized disk usage for /tmp/ directory
+du -sh /*					- shows summarized disk usage for main tree directory
+du -a /etc/ | sort -n -r | head -n 10		- 
+du -ch --max-depth=1		- Shows the amount of disk space used by each directory
+
+lsblk						- directory tree
+
+
+ncdu						- Check disk space usage - GUI 
+i						- Show information about selected item 
+g						- Show percentage and/or graph
+?						- Show help
+
+ls /dev/sd*					- List of all partitions
+sudo fdisk -l					- Show all drives attached
+cat /proc/partitions				- Show all partitions
+cat /proc/mounts				- Show mounted points 
+mount						- As above
+
+smartctl -t /dev/sda				- SMART Health Status
+smartctl --info /dev/sda			- Device information
+smartctl  -t  short  /dev/sda			- Start a short test.
+smartctl  -t  long  /dev/sda			- Start a long test
+smartctl  -X  /dev/sda				- Cancel the currently running test
+smartctl  -c  /dev/sda				- Get current test status
+
+cat /proc/mdstat/				- Show RAID configuration
+mdadm --manage /dev/md0 --fail /dev/sda1	- mark partition sda1 on raid controler md0 as fail
+mdadm --manage /dev/md0 --remove /dev/sda1	- remove partition sda1 on raid controler md0
+for i in `ls /dev/md?`; do mdadm --manage $i --remove faulty; done
+						- this is one command to remove all faulty partitions
+
+fdisk -l /dev/sda				- check the new drive that is added 
+sfdisk -d /dev/sda | sfdisk /dev/sdb		- copy partitions from sda to sdb
+mdadm --manage /dev/md0 --add /dev/sda1		- add the new partitions to the exisitng arrays:
+
+=========================
+# FSTAB			|
+================================================================================
+
+sudo vim /etc/fstab/				- edit fstab file
+sudo mount -a					- reload fstab file
+
+
+
+
+
+=========================
+# INFO and APP 		|
+================================================================================
+lsb_relase -a 					- ubuntu version
+ifconfig					- network card info
+konqueror					- KDE browser
+sensible-browser				- GNOME browser
+nautilus					- GNOME file manager
+find /home/ubuntu/ -iname 'nozbe*' -print 
+bash [program.sh] 				- instal program	
+sudo apt-get remove app_name			- uninstal program
+sudo apt-get autoclean				- clean after uninstal
+sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
+dpkg --list					- list of all installed packag
+sudo apt-get --purge remove	[name]	- uninstal [name] program
+
+
+=========================
+# NETWORK		|
+================================================================================
+
+ping -c4 [IP ADDRESS]				- send ping four times only
+ping -i0.2 [IP ADDRESS]				- send ping every 200ms
+nmap -sP 192.168.1.1-254 			- search addresses from1 to 254	
+for i in `cat ping_STDIN.txt` ;do ping -c 1 $i;done			- send ping from ping_STDIN list
+
+arp -n	(check -a option)			- to get mac and IP addresses in loccal network
+route -n					- IP routing table
+ip neighbor show				- Show neighbo IP and MAC
+ping 127.0.0.0					- loop ping (to test network card)
+
+traceroute [IP ADDRESS]				- show the devices IP beetwen  
+
+who						- loged users list
+write <user> <pts/**> Enter			- Start a message 
+
+sudo ifconfig wlan0 up				- turn ON wlan0 interface
+sudo ifconfig wlan0 down			- turn OFF wlan0 interface
+
+sudo nmap -O <IP>				- Scan for the host operating system
+sudo nmap -sT <IP>				- Scan for TCP connections
+
+traceload					- Network trafic
+cat /etc/services				- ports list
+cat /etc/services | grep SSL			- show all ports over SSL
+
+ip neigh|grep "$(ip -4 route list 0/0|head -1|cut -d' ' -f3) "|cut -d' ' -f5|tr '[a-f]' '[A-F]'
+						- Show default gateway MAC address
+
+
+	
+=========================
+# REMOTE HOST		|
+================================================================================
+error:
+Offending RSA key in /c/Users/pit/.ssh/known_hosts:4
+RSA host key for 192.168.1.11 has changed and you have requested strict checking.
+Host key verification failed.
+
+cat ~/.ssh/known_hosts				- Show know hosts table
+
+sudo sed -i "4d" /c/Users/pit/.ssh/known_hosts	- add host to known_hosts list
+sudo ssh -o 'StrictHostKeyChecking no' IP	- don't check known_hosts
+
+
+=========================
+# Other			|
+================================================================================
+type vim
+output vim is hashed (/usr/bin/vim)
+
+for ((i=1; $i<=20; i++)); do "echo linia $i"; done
+
+/* terminal title bar */
+PROMPT_COMMAND='echo -ne "\033]0;Terminal | mplayer\007"' - terminal title bar change 
+PROMPT_COMMAND='echo -en "\033]0; $(whoami)@$(hostname)|$( pwd|cut -d "/" -f 4-100 ) \a"'
+TITLEPREFIX='echo -en "\033]0; $(whoami)@$(hostname)|$( pwd|cut -d "/" -f 4-100 ) \a"'
+echo -en "\033]0;New terminal title\a"
+TITLEPREFIX="madayou" - works in GITBash windows
+
+
+
+ ipconfig > /c/_temp/`whoami`.txt - send command output (ipconfig) to file name (machine user name).txt
+# VARIABLES
+basename $0	- current script location and name
+tree . 		- folders and files
+
+=========================
+# User accounts		|
+================================================================================
+
+sudo su						- switch to the root user
+sudo adduser <user_name>			- add user
+passwd	<user_name>				- set a user password
+useradd -d /data/projects <user_name>		- add user wit a specific home folder
+
+userdel <user_name>				- remove user
+userdel -r <user_name>				- remove user, home direcory ane email
+
+groups <user_name>				- show the groups to which user belong
+sudo adduser <user_name> <group_name>		- add user to specific group
+sudo usermod -a -G sudo username 		- add existing user to sudo grup
+cat /etc/group | grep sudo 			- show sudo users
+cut -d: -f1 /etc/passwd 			- show users list
+
+=========================
+# Passwords		|
+================================================================================
+sudo cat /etc/shadow				- password file
+sudo pwck -r /etc/shadow			- show users logins
+ls -l /usr/bin/passwd				- user permissions
+
+sudo passwd					- change your own password
+sudo passwd <user_name>				- change other users password
+
+
+/etc/shadow file example
+
+root:$1$fnfffc$pGteyHdicpGOfffXX4ow#5:12053:0:99999:7:::
+
+1. Username : It is your login name.
+2. Password : It is your encrypted password. The password should be minimum 8-12 characters long
+including special characters, digits, lower case alphabetic and more. Usually password format is 
+set to $id$salt$hashed, The $id is the algorithm used On GNU/Linux as follows:
+  a. $1$ is MD5
+  b. $2a$ is Blowfish
+  c. $2y$ is Blowfish
+  d. $5$ is SHA-256
+  e. $6$ is SHA-512
+3. Last password change (lastchanged) : Days since Jan 1, 1970 that password was last changed
+4. Minimum : The minimum number of days required between password changes i.e. the number of days left before
+the user is allowed to change his/her password
+5. Maximum : The maximum number of days the password is valid (after that user is forced to change his/her password)
+6. Warn : The number of days before password is to expire that user is warned that his/her password must be changed
+7. Inactive : The number of days after password expires that account is disabled
+8. Expire : days since Jan 1, 1970 that account is disabled i.e. an absolute date specifying when the login may no longer be used.
+
+
+	
+
+
+=========================
+# Screen		|
+================================================================================
+screen -S <session_name>			- create a new screen sesion
+screen -ls					- list curent screen sesions
+screen -x <session_name>			- to join to active screen session
+screen -r <id.sesion_name>			- login to screen sesion
+CTRL + A & CTRL + D				- safe log out from the screen (terminal)
+CTRL + A :sessionname new_screen_name		- rename screen sesion
+Ctrl + a , w					- list of all windows
+Ctrl + a , A					- rename window
+Ctrl + a ?					- help menu
+Ctrl + a "					- selected window menu
+Ctrl + a, |					- split window vertical
+Ctrl + a, S					- split window horizontal	
+Ctrl + a TAB					- shitch to next pile
+Ctrl + a 0-1-2					- attach window to pile (0-1-2 window number)
+ctrl + a X					- close pile with window
+ctrl + a \					- kill screen sesion
+
+
+=========================
+# cron jobs		|
+================================================================================
+sudo apt-get install gnome-schedule		- install crone 
+crontab - e					- edit crone table
+crontab -l					- view your currently saved scheduled tasks
+select-editor					- change current crone tab editor
+0 */3 * * * uptime >> test_crone.txt		- run uptime command every 3hrs and save output in to the test_crone.txt file
+@reboot /home/user/backup.sh			- run /home/user/backup.sh after rebooting 
+
+cd /var/spool/cron				- folder where all crontab files are stored (crontab -e)
+cd /etc/cron.d/					- folder where all cron files are stored (separate files)
+
+
+=========================
+# history		|
+================================================================================
+
+!!						- execute last comand from history
+history						- Shows history commands
+history 10					- Shows last 10 history commands
+history | grep ssh				- Shows lines that have ssh 
+! <history_number>				- Paste command from history
+history -c 					- clear history
+.bash_history					- file where all history comands are stored 
+
+
+=========================
+# VNC server		|
+================================================================================
+which vncserver					- check if vnc server is install
+vncpasswd					- set up/change vnc password
+ps aux | grep vnc				- check if VNC server is running
+vncserver					- start VNC server
+cd ./vnc					- log files and settings for VNC server
+vncserver -kill :1				- stop vnc serwer (instance 1)
+
+
+=========================
+# WiFi			|
+================================================================================
+cd /etc/NetworkManager/system-connections 	- folder with all connected network details
+ls -a						- show files in folder
+sudo cat [netowrk name]				- WiFi password is stored under 'psk='
+	
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 5010a16401c275a4376de5970d5ccc59c5670ab2
