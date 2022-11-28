@@ -33,13 +33,22 @@ reboot						- Reboot the device
 poweroff					- Shutdown device
 
 
-
-
-
-
 =========================
-# clients		|
+# clients				|
 ================================================================================
 stamgr -1					- list of connected devices
 arp -a						- Show arp table
 
+
+
+=========================
+# web certificates		|
+================================================================================
+
+openssl x509 -in /mnt/data/unifi-os/unifi-core/config/unifi-core.crt -text		
+^ check certificate
+
+cd /mnt/data/unifi-os/unifi-core/config 		- cert folder
+mv unifi-core.crt unifi-core.crt.bak			- backup cert
+mv unifi-core.key unifi-core.key.bak			- backup key
+reboot
