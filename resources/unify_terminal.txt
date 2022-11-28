@@ -12,8 +12,14 @@ ip route					- Display current gateway
 ip neigh					- Show IPv6 neighbors
 ping 						- Check network connection to device
 
-cat /var/log/messages				- Output the error log
-tail -f /var/log/messages			- Monitor log file
+cat /var/log/messages										- Output the error log
+tail -f /var/log/messages									- Monitor log file
+cat /mnt/data/unifi-os/unifi-core/logs/discovery.log		- Discovery log
+cat /mnt/data/unifi-os/unifi-core/logs/system.log			- System log
+cat /mnt/data/unifi-os/unifi/logs/server.log				- Server log
+cat /mnt/data/unifi-os/unifi-core/logs/errors.log			- HTTP Errors
+
+
 
 double TAB					- list of all available SSH commands
 
@@ -31,6 +37,15 @@ fwupdate --url https://<firmware-url>.bin 	- Update firmware
 
 reboot						- Reboot the device
 poweroff					- Shutdown device
+
+=========================
+# Device status			|
+================================================================================
+ubnt-systool portstatus							- ports status
+ubnt-systool cpuload							- show CPU load
+ubnt-systool cputemp							- show CPU Temp
+
+
 
 
 =========================
@@ -52,3 +67,8 @@ cd /mnt/data/unifi-os/unifi-core/config 		- cert folder
 mv unifi-core.crt unifi-core.crt.bak			- backup cert
 mv unifi-core.key unifi-core.key.bak			- backup key
 reboot
+
+
+
+
+
