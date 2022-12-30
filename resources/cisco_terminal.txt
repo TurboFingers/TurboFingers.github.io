@@ -3,10 +3,26 @@
 ================================================================================
 
 =========================
-# General		|
+# General				|
 ================================================================================
 show version						- software version used on the switch
 show interfaces 
+
+
+show interfaces GigabitEthernet 0/2				- interface description
+show interface status							- all interfaces status
+
+
+SW(config)#interface Gi0/3				
+SW(config-if)#no description					- set description to empty
+SW(config-if)#description your-description		- set your description on port Gi0/3
+
+show ip interface brief							- show interfaces status and vlan ip dhcp helper
+show ip interface vlan 1						- show interface for vlan 1
+show run interface vlan 1						- show interface for vlan 1 from running-config
+
+
+
 
 
 
@@ -21,7 +37,8 @@ show clock detail						- show clock details
 (config)#clock timezone UTC 0			- timezone Warsaw
 
 
-
+ip dhcp relay information trust-all		- dhcp snooping for port
+ip dhcp relay information policy keep	- dhcp snooping for port
 
 
 

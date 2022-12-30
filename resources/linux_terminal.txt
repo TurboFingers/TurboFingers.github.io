@@ -62,8 +62,10 @@ dd if=/sciezka_do_obrazu.iso of=/dev/sdX - wypalanie pliku iso na pendrive
 # cat			|
 ================================================================================
 
-cat -n						- print line numbers before each line in a file
-cat -T						- show tabs
+cat -n										- print line numbers before each line in a file
+cat -T										- show tabs
+cat /dev/urandom							- uncoded charakters floding on the screen - run forever
+cat /dev/urandom | head -c 10				- the output ends after 10 random bytes
 
 
 
@@ -157,6 +159,8 @@ sudo apt-get --purge remove	[name]	- uninstal [name] program
 =========================
 # NETWORK		|
 ================================================================================
+sudo apt-get install mtr			- install MTR
+mtr									- My Traceroute
 
 ping -c4 [IP ADDRESS]				- send ping four times only
 ping -i0.2 [IP ADDRESS]				- send ping every 200ms
@@ -283,24 +287,62 @@ the user is allowed to change his/her password
 
 
 =========================
-# Screen		|
+# Screen				|
 ================================================================================
 screen -S <session_name>			- create a new screen sesion
-screen -ls					- list curent screen sesions
+screen -ls							- list curent screen sesions
 screen -x <session_name>			- to join to active screen session
 screen -r <id.sesion_name>			- login to screen sesion
-CTRL + A & CTRL + D				- safe log out from the screen (terminal)
+CTRL + A & CTRL + D					- safe log out from the screen (terminal)
 CTRL + A :sessionname new_screen_name		- rename screen sesion
-Ctrl + a , w					- list of all windows
-Ctrl + a , A					- rename window
-Ctrl + a ?					- help menu
-Ctrl + a "					- selected window menu
-Ctrl + a, |					- split window vertical
-Ctrl + a, S					- split window horizontal	
-Ctrl + a TAB					- shitch to next pile
-Ctrl + a 0-1-2					- attach window to pile (0-1-2 window number)
-ctrl + a X					- close pile with window
-ctrl + a \					- kill screen sesion
+Ctrl + a , w						- list of all windows
+Ctrl + a , A						- rename window
+Ctrl + a ?							- help menu
+Ctrl + a "							- selected window menu
+Ctrl + a, |							- split window vertical
+Ctrl + a, S							- split window horizontal	
+Ctrl + a TAB						- shitch to next pile
+Ctrl + a 0-1-2						- attach window to pile (0-1-2 window number)
+ctrl + a X							- close pile with window
+ctrl + a \							- kill screen sesion
+
+
+=========================
+# backgroud jobs		|
+================================================================================
+
+bg										- background jobs
+fg										- move job to foregroud
+CTRL + z								- suspend job
+jobs -l									- all active jobs in the current bash
+
+disown -a								- remove all jobs
+disown %[job_id]						- remove job witch specific ID
+disown -r 								- remove currently running jobs ( running jobs have + symbol in jobs -l command)
+disown -h %[job_id]						- keep jobs running after you log out
+
+
+
+nohup [command]							- run jon in the background 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 =========================
@@ -401,7 +443,18 @@ scp [file_in_local_machine] user@server.com:/home/user/
 rsync [file_in_local_machine/catalog] -avz user@server.com:/home/user/		-  copies and sync files to remote system
 rsync [file_in_local_machine/catalog] -avzhe ssh user@server.com:/home/user/	-  copies and sync files to remote system using ssh
 
-### grep
+
+=========================
+# pgrep					|
+================================================================================
+pgrep -f [fraze]								- serch in running proceses and show PID ID
+pgrep -fl [fraze]								- search running processes and show PID + name
+pkill -f [fraze]								kill process witch fraze
+
+
+=========================
+# grep					|
+================================================================================
 grep -ve ^# -ve '^;' -ve ^$ smb.conf.2018-03-12 > smb.conf
 filter the file smb.conf.2018-03-12 and save output to file smb.conf
 -ve	- reverse expression

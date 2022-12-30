@@ -9,6 +9,12 @@
 =============================================================================== 
 =  T e r m i n a l							      =
 =============================================================================== 
+
+CTRL + SHIFT + CTRL	- copy selected text
+SHIFT + INSERT		- paste text
+CTRL + D			- end of file (logout)
+
+
 CTRL + ALT + T		- open a new terminal window
 CTRL + a			- move cursor to begining of the line
 CTRL + e			- move coursor to the end of the line
