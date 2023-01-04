@@ -13,6 +13,32 @@ MASTER	-		- main project branch
 
 https://github.com/github/gitignore 	- example .gitignore files
 
+
+=========================
+# SSH settings		|
+================================================================================
+
+ssh-keygen -t ed25519 -C your_alias@github.com		- generate your key	
+eval "$(ssh-agent -s)"					- start agent
+vim ~/.ssh/config					- create config file
+
+	Host *
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/id_ed25519
+
+ssh-add ~/.ssh/id_ed25519				- add identity to ssh 
+
+https://github.com -> settings -> add SSH and GPG keys 	- add  id_ed25519.pub key
+
+ssh -T git@github.com					- set ssh key to use
+git config -e						- edit config file and add bellow lines
+
+	[remote "origin"]
+		url = <ssh link from github.com to your repository
+		fetch = +refs/heads/*:refs/remotes/origin/*
+
+
+
 =========================
 # General commands	|
 ================================================================================
