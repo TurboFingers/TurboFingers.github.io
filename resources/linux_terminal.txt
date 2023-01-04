@@ -3,13 +3,20 @@
 # Linux Terminal commands				    | date: 03_05_2017 # 
 # ================================================================================
 bash [program.sh]				- execute a script
-. .bashrc					- reload .bashrc file
+. .bashrc						- reload .bashrc file
 source .bashrc					- ^^^^^^^^^^^^^^^^^^^
+
+vi ~/.profile					- set default editor for command <fc>
+FCEDIT=vi						  by adding a line FCEDIT=vim in .profile file
+source ~/.profile				- reload .profile to make changes	
 
 
 =========================
 # FOLDERS AND FILES  	|
 ================================================================================
+
+file <filename>						- show details about file (scrypt, bin, graphics) 
+
 cd -	go to the last location		
 pwd	current folder
 ls	list of files and folders
@@ -142,14 +149,14 @@ sudo mount -a					- reload fstab file
 =========================
 # INFO and APP 		|
 ================================================================================
-lsb_relase -a 					- ubuntu version
-ifconfig					- network card info
-konqueror					- KDE browser
-sensible-browser				- GNOME browser
-nautilus					- GNOME file manager
-find /home/ubuntu/ -iname 'nozbe*' -print 
-bash [program.sh] 				- instal program	
-sudo apt-get remove app_name			- uninstal program
+lsb_relase -a 						- ubuntu version
+ifconfig							- network card info
+konqueror							- KDE browser
+sensible-browser					- GNOME browser
+nautilus							- GNOME file manager
+find /home/ubuntu/ -iname 'nozbe*' 	-print 
+bash [program.sh] 					- instal program	
+sudo apt-get remove app_name		- uninstal program
 sudo apt-get autoclean				- clean after uninstal
 sudo cat /sys/firmware/acpi/tables/MSDM 	- Windows key from BIOS
 dpkg --list							- list of all installed packag
@@ -157,7 +164,7 @@ sudo apt-get --purge remove	[name]	- uninstal [name] program
 
 
 =========================
-# NETWORK		|
+# NETWORK				|
 ================================================================================
 sudo apt-get install mtr			- install MTR
 mtr									- My Traceroute
@@ -168,23 +175,23 @@ nmap -sP 192.168.1.1-254 			- search addresses from1 to 254
 for i in `cat ping_STDIN.txt` ;do ping -c 1 $i;done			- send ping from ping_STDIN list
 
 arp -n	(check -a option)			- to get mac and IP addresses in loccal network
-route -n					- IP routing table
-ip neighbor show				- Show neighbo IP and MAC
-ping 127.0.0.0					- loop ping (to test network card)
+route -n							- IP routing table
+ip neighbor show					- Show neighbo IP and MAC
+ping 127.0.0.0						- loop ping (to test network card)
 
 traceroute [IP ADDRESS]				- show the devices IP beetwen  
 
-who						- loged users list
+who									- loged users list
 write <user> <pts/**> Enter			- Start a message 
 
 sudo ifconfig wlan0 up				- turn ON wlan0 interface
 sudo ifconfig wlan0 down			- turn OFF wlan0 interface
 
-sudo nmap -O <IP>				- Scan for the host operating system
-sudo nmap -sT <IP>				- Scan for TCP connections
+sudo nmap -O <IP>					- Scan for the host operating system
+sudo nmap -sT <IP>					- Scan for TCP connections
 
-traceload					- Network trafic
-cat /etc/services				- ports list
+traceload							- Network trafic
+cat /etc/services					- ports list
 cat /etc/services | grep SSL			- show all ports over SSL
 
 ip neigh|grep "$(ip -4 route list 0/0|head -1|cut -d' ' -f3) "|cut -d' ' -f5|tr '[a-f]' '[A-F]'
@@ -198,7 +205,7 @@ curl -s ipinfo.io/94.254.236.55/org?token=$TOKEN | awk '{for (i=2; i<NF; i++) pr
 
 	
 =========================
-# REMOTE HOST		|
+# REMOTE HOST			|
 ================================================================================
 error:
 Offending RSA key in /c/Users/pit/.ssh/known_hosts:4
@@ -234,7 +241,7 @@ basename $0	- current script location and name
 tree . 		- folders and files
 
 =========================
-# User accounts		|
+# User accounts			|
 ================================================================================
 
 sudo su						- switch to the root user
@@ -251,7 +258,7 @@ sudo usermod -a -G sudo username 	- add existing user to sudo grup
 cat /etc/group | grep sudo 		- show sudo users
 
 =========================
-# Passwords		|
+# Passwords				|
 ================================================================================
 sudo cat /etc/shadow				- password file
 sudo pwck -r /etc/shadow			- show users logins
@@ -327,26 +334,8 @@ nohup [command]							- run jon in the background
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 =========================
-# cron jobs		|
+# cron jobs				|
 ================================================================================
 sudo apt-get install gnome-schedule		- install crone 
 crontab - e					- edit crone table
@@ -360,7 +349,7 @@ cd /etc/cron.d/					- folder where all cron files are stored (separate files)
 
 
 =========================
-# history		|
+# history				|
 ================================================================================
 
 !!								- execute last comand from history
@@ -371,15 +360,27 @@ history | grep ssh				- Shows lines that have ssh
 history -c 						- clear history
 .bash_history					- file where all history comands are stored 
 
+CTRL + R 						- search in history commands
+
 
 =========================
-# VNC server		|
+# Fix Commands - fc		|
+================================================================================
+
+fc 								- edit in default editor last command (exit from editor will execute this command)
+fc -last						- display the last 16 commands
+fc -e vim						- edit the last command in vim editor
+fc -e nano						- edit the last command in nano editor
+
+
+=========================
+# VNC server			|
 ================================================================================
 which vncserver					- check if vnc server is install
-vncpasswd					- set up/change vnc password
+vncpasswd						- set up/change vnc password
 ps aux | grep vnc				- check if VNC server is running
-vncserver					- start VNC server
-cd ./vnc					- log files and settings for VNC server
+vncserver						- start VNC server
+cd ./vnc						- log files and settings for VNC server
 vncserver -kill :1				- stop vnc serwer (instance 1)
 
 

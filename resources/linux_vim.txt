@@ -37,6 +37,7 @@ vimulator	- tutorial how to use Vim
 u		- undo last action
 p		- paste data from clipbord (vim has few different clipbords)
 w		- word, move cursor to next word
+xp		- swap to charakters from right to left
 
 gg or 1G	- go to the first line of the file
 G		- go to the end of the file
