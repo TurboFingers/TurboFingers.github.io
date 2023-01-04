@@ -46,7 +46,7 @@ which git				- folder where git is install
 git config -- list			- list of al setings
 cd~ -> cat .gitconfig			- user name and email
 
-git config --global user.name pmadaj
+git config --global user.name 
 git config --global user.email email@co.uk	
 git config --global core.excludesfile .gitignore_global
 cat .git/config					- settings to remote 'origin' 
