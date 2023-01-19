@@ -79,12 +79,36 @@ driverquery - drivers list
 title /xyz/ - customize the Command Prompt Title Bar
 
 =========================
-# WiFI					|
+# network					|
 ================================================================================
-### CMD line
+### netsh
 netsh 													- Network menu 
+interface show interface								- show network interface
+interface ip show config name=Wi-Fi						- show Wi-Fi interface configuration
+ip set address name=Wi-Fi source=static addr=10.10.0.5 mask=255.255.255.0 
+														- set static IP on Wi-Fi interface
+
 wlan show profile										- show all WiFi profiles
 wlan show profile [networkName] key=clear				- show WiFi password under 'Key Content' 
+wlan show interfaces									- Wirelles network card details	
+wlan show drivers										- network card information
+
+netsh interface set interface name=Wi-Fi admin=disabled	- disable network card
+netsh interface set interface name=Wi-Fi admin=enabled	- enable network card
+
+interface dump > config.dat								- save configuration to file config.dat
+exec config.dat											- load configuration from file config.dat
+
+
+
+cmd -> netsh ->
+
+wlan show profiles <-znajdz SSID sieci 
+wlan show profiles name=<SSID-sieci> key=clear <-pod Key Content pokaze Ci haslo sieci 
+
+
+
+
 
 ### powerShell
 (netsh wlan show profiles) | Select-String “\:(.+)$” | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name=”$name” key=clear)} | Select-String “Key Content\W+\:(.+)$” | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize
